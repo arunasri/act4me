@@ -6,7 +6,7 @@ server "173.230.134.171", :app, :web, :db, :primary => true
 
 set :user, 'rails'
 set :keep_releases, 7
-set :repository, "https://github.com/subbarao/besant"
+set :repository, "https://github.com/arunasri/act4me"
 set :use_sudo, false
 set :scm, :git
 set :rvm_type, :user
@@ -15,7 +15,7 @@ set :ssh_options, {:port => 30000}
 default_run_options[:pty] = true
 
 
-set(:application) { "besant_#{stage}" }
+set(:application) { "act4me_#{stage}" }
 set (:deploy_to) { "/home/#{user}/apps/#{application}" }
 set :copy_remote_dir, "/home/#{user}/tmp"
 
