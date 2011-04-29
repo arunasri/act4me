@@ -8,6 +8,7 @@ GIT
 GEM
   remote: http://rubygems.org/
   specs:
+    aaronh-chronic (0.3.9)
     abstract (1.0.0)
     actionmailer (3.0.7)
       actionpack (= 3.0.7)
@@ -113,6 +114,9 @@ GEM
       oauth (~> 0.4.1)
       yajl-ruby (~> 0.7.0)
     tzinfo (0.3.27)
+    whenever (0.6.7)
+      aaronh-chronic (>= 0.3.9)
+      activesupport (>= 2.3.4)
     will_paginate (3.0.pre2)
     yajl-ruby (0.7.9)
 
@@ -139,4 +143,5 @@ DEPENDENCIES
   shoulda
   timecop
   twitter (= 0.9.8)
+  whenever
   will_paginate (= 3.0.pre2)

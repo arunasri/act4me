@@ -20,6 +20,8 @@ gem 'mysql'
 gem 'hashie'
 gem 'twitter', '0.9.8'
 gem "will_paginate", "3.0.pre2"
+gem 'whenever', :require => false
+
 
 group :test do
   gem 'faker'
