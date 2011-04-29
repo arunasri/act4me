@@ -1,0 +1,7 @@
+log/
+tmp/
+config/database.yml
+.bundle
+.rvmrc
+.autotest
+public/system

@@ -1,0 +1,8 @@
+<% if movie.cover_image %>
+  <li>
+    <%= image_tag movie.cover_image.thumb("80x80").url,:height => 80,:width => 80 %>
+    <h2 style="margin-top:0;"><%= link_to movie.name, movie %> </h2>
+    <p><strong><%= movie.computed_score %>%</strong></p>
+    <p><%= movie.cast %></p>
+  </li>
+<% end %>

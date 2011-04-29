@@ -1,0 +1,28 @@
+<% content_for :title do %>
+  <%= "Review Umpire" %> 
+<% end %>
+
+<% content_for :description do %>
+  <%= "Aggregates reviews of telugu movies." %> 
+<% end %>
+
+<% content_for :keywords do %>
+  <%= "telugu movie reviews, telugu movie tweets" %> 
+<% end %>
+
+<ul id="nav">
+  <% Movie.limit(13).to_ary.each do | movie | %>
+    <% if movie.cover_image %>
+      <li> <%= link_to image_tag(movie.cover_image.thumb("50x50").url, :width => 50, :height => 50), "#" %> </li>
+    <% end %>
+  <% end %>
+</ul>
+
+<div id="carousel">				
+  <% Movie.limit(13).to_ary.each do | movie | %>
+    <div>
+      <%= render movie %>
+      <%= render movie.tweets.spotlight.limit(8) %>
+    </div>
+  <% end %>
+</div>
