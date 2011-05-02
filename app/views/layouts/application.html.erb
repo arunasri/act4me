@@ -9,14 +9,13 @@
     <meta name="keywords" content="<%= content_for :keywords %>" />
     <%= stylesheet_link_tag :defaults, :cache => true %>
     <%= javascript_include_tag :defaults, :cache => true %>
+    <%= stylesheet_link_tag "compiled/grid", "compiled/text" %>
   </head>
-
   <body>
 
 
-    <div id="container">
-      <div class="header">
-        <%= link_to image_tag("logo.png"), "/" %>
+    <div class="two-column">
+      <div id="header">
         <div id="search">
           <div id="search_box">
             <input type="text" id="jq-primarySearch" name="search" title="Search jQuery" accesskey="f" value="">
@@ -24,8 +23,7 @@
           </div>
         </div>
       </div>
-
-      <div id="inner">
+      <div id="main-content">
         <%= yield %>
       </div>
     </div>
@@ -39,6 +37,6 @@
        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
        })();
-</script>
+     </script>
    </body>
  </html>

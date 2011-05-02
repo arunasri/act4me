@@ -1,7 +1,5 @@
 <div class="poster">
-  <% if movie.cover_image %>
-    <%= image_tag(movie.cover_image.thumb("300x225").url)  %>
-  <% end %>
+    <%= image_tag(movie.poster_url.to_s)  %>
 </div>
 
 <div class="movie-info">

@@ -12,9 +12,8 @@
 
 <ul id="nav">
   <% Movie.limit(13).to_ary.each do | movie | %>
-    <% if movie.cover_image %>
-      <li> <%= link_to image_tag(movie.cover_image.thumb("50x50").url, :width => 50, :height => 50), "#" %> </li>
-    <% end %>
+    <li> 
+      <%= link_to image_tag(movie.poster_url.to_s, :width => 50, :height => 50), "#" %> </li>
   <% end %>
 </ul>
 

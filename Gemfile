@@ -1,20 +1,18 @@
 source 'http://rubygems.org'
 
-gem 'jquery-rails'
+gem "compass", ">= 0.11.1"
+gem 'compass-960-plugin', :require => 'ninesixty'
+gem 'sass'
 gem 'meta_search'
 gem 'hpricot'
 gem 'geokit'
 gem 'geokit-rails3'
 gem 'rails', '3.0.7'
-gem 'openamplify', :git => "git://github.com/gregmoreno/openamplify.git"
 gem 'hoptoad_notifier'
-#gem 'capistrano'
-#gem 'capistrano-ext'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-gem 'rmagick',    :require => 'RMagick'
-gem 'rack-cache', :require => 'rack/cache'
-gem 'dragonfly', '~>0.7.5'
+gem 'carrierwave'
+gem 'rmagick'
 
 gem 'mysql'
 gem 'hashie'
@@ -24,9 +22,13 @@ gem 'whenever', :require => false
 
 
 group :test do
+  gem 'guard'
+  gem 'guard-test'
   gem 'faker'
   gem 'timecop'
   gem 'mocha', '0.9.8', :require => false
   gem 'shoulda'
   gem 'factory_girl_rails'
+  gem 'capistrano'
+  gem 'capistrano-ext'
 end

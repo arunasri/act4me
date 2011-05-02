@@ -30,8 +30,6 @@ Tweet2review::Application.routes.draw do
 
   resources :keywords
 
-  match '/media(/:dragonfly)', :to => Dragonfly[:images]
-
   match 'login' =>   'application#login'
 
   match 'logout' =>  'application#logout'

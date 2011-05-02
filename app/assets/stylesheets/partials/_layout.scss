@@ -1,0 +1,10 @@
+.two-column {
+  @include grid-container;
+  #header,
+  #footer,
+  #main-content {
+    @include grid-unit-base; }
+  #header, #footer {
+    @include grid-width(12); }
+  #main-content {
+    @include grid-width(12); } }

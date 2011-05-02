@@ -12,41 +12,16 @@ class Tweet < ActiveRecord::Base
 
   serialize :metadata
 
-  serialize :open_amplify
-
   cattr_reader :per_page
-
-  cattr_reader :amplify_client
-
-  cattr_reader :api_key
-
-  @@api_key = {
-    "production" => "hgb86axdjwdp7ytzcs9h34p3q675uwpe",
-    "development" => "kxjud2kmbwvq77d6ngw492n6kefvqe87",
-    "test" => "teaser"
-  }
-
-  @@amplify_client = OpenAmplify::Client.new({
-    :analysis => :styles,
-    :api_key => @@api_key[Rails.env.to_s]
-  })
 
   @@per_page = 10
 
-  scope :hit, where(["tweets.max_polarity > 0 "])
-
-  scope :flop, where(["tweets.max_polarity < 0 "])
-
-  scope :polarized,   where(["tweets.max_polarity is not null"])
-
-  scope :hit_or_flop, where(["tweets.max_polarity is not null"])
-
-  scope :assesed, where(:category => %w(positive negative mixed))
-
   scope :spotlight, where(:featured => true)
 
-  after_create  :fresh!,    :unless => :url?
+  after_create  :fresh!, :unless => :url?
+
   after_create  :external!, :if => :url?
+  scope :assesed, where(:category => %w(positive negative mixed))
 
   validates :twitter_id, :presence => true, :retweet => true, :uniqueness => { :scope => :movie_id }
 
@@ -83,26 +58,6 @@ class Tweet < ActiveRecord::Base
 
   def self.only_related_attributes(hashie)
     hashie.to_hash.with_indifferent_access.slice(*columns.map(&:name))
-  end
-
-  def analyze
-    JSON.parse(amplify_client.analyze_text(text).to_json)
-  end
-
-  def request_polarity_values
-    polarity = analyze["ns1:StylesResponse"]["StylesReturn"]["Styles"]["Polarity"].values_at("Max","Min","Mean")
-    polarity.collect { | element | (element["Value"]*100).to_i }
-  end
-
-  def amplified?
-    max_polarity.present? || min_polarity.present? || mean_polarity.present?
-  end
-
-  def amplify!
-    unless amplified?
-      self.max_polarity, self.min_polarity, self.mean_polarity = request_polarity_values
-      save
-    end
   end
 
   class << self

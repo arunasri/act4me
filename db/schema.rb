@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101026031653) do
+ActiveRecord::Schema.define(:version => 20110502022508) do
 
   create_table "jobs", :force => true do |t|
     t.integer  "number_of_requests"
@@ -39,8 +39,8 @@ ActiveRecord::Schema.define(:version => 20101026031653) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "disabled",            :default => true
-    t.string   "cover_image_uid"
     t.string   "last_computed_score"
+    t.string   "poster"
   end
 
   create_table "tweets", :force => true do |t|

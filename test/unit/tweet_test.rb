@@ -42,81 +42,6 @@ class TweetTest < ActiveSupport::TestCase
       tweet = Tweet.from_hashie!(:created_at => "1/2/2009")
       assert "1/2/2009", tweet.created_on_twitter
     end
-
-    should "throw exception if amplify client fails" do
-      tweet = Tweet.new
-      tweet.expects(:analyze).returns({})
-
-      assert_raise(NoMethodError){ tweet.request_polarity_values }
-    end
-
-
-    should "extract polarity from the response json" do
-      json = {
-        "ns1:StylesResponse"=>{
-          "StylesReturn"=>{
-            "Styles"=>{
-              "Polarity"=>{
-                "Max"=>{
-                  "Name"=>"Positive",
-                  "Value"=> 0.8
-                },
-                "Mean"=>{
-                  "Name"=>"Positive",
-                  "Value"=> 0.3
-                },
-                "Min"=>{
-                  "Name"=>"Positive",
-                  "Value"=> -0.2
-                }
-              }
-            },
-          }
-        }
-      }
-
-      tweet = Tweet.new
-      tweet.expects(:analyze).returns(json)
-
-      assert_equal [ 80, -20, 30 ], tweet.request_polarity_values
-    end
-
-    should "call amplify if tweet is not amplified?" do
-      tweet = Tweet.new
-      tweet.expects(:amplified?).returns(false)
-      tweet.expects(:request_polarity_values)
-
-      tweet.amplify!
-    end
-
-    should "not call amplify if open amplify is present" do
-      tweet = Tweet.new
-      tweet.expects(:amplified?).returns(true)
-      tweet.expects(:request_polarity_values).never
-
-      tweet.amplify!
-    end
-
-    should "know it is amplified? when max polarity is set" do
-      tweet = Tweet.new
-      tweet.max_polarity = 23
-
-      assert tweet.amplified?
-    end
-
-    should "know it is amplified? when min polarity is set" do
-      tweet = Tweet.new
-      tweet.min_polarity = -90
-
-      assert tweet.amplified?
-    end
-
-    should "know it is amplified? when mean polarity is set" do
-      tweet = Tweet.new
-      tweet.mean_polarity = 40
-
-      assert tweet.amplified?
-    end
   end
 
   context "Tweet scopes" do
@@ -130,18 +55,6 @@ class TweetTest < ActiveSupport::TestCase
 
     should "detect polarized tweets" do
       assert_same_elements [ @positive, @negative ], Tweet.polarized
-    end
-
-    should "detect positive tweets" do
-      assert_same_elements [ @positive ], Tweet.hit
-    end
-
-    should "detect negative tweets" do
-      assert_same_elements [ @negative ], Tweet.flop
-    end
-
-    should "detect negative tweets" do
-      assert_same_elements [ @negative ], Tweet.flop
     end
 
     should "detect featured tweets" do

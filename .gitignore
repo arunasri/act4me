@@ -5,3 +5,5 @@ config/database.yml
 .rvmrc
 .autotest
 public/system
+public/uploads
+Guardfile
