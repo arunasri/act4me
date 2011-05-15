@@ -1,10 +1,4 @@
-<div class="tweets clearfix">
-  <div class="parent">
-    <%= render tweets %>
-  </div>
-</div>
-<% if tweets.next_page %>
-  <div id="next" class="clearfix">
-    <%= link_to "Next Page", url_for(params.slice(:id,:action,:controller).merge(:page => tweets.next_page)) %> 
-  </div>
+<% tweets.in_groups_of(3).each do | tg | %>
+  <%= render :partial => "/tweets/tweet", :collection => tg, :as => :tweet %>
+  <div class="clear"></div>
 <% end %>

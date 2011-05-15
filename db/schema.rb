@@ -39,8 +39,10 @@ ActiveRecord::Schema.define(:version => 20110502022508) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "disabled",            :default => true
+    t.string   "cover_image_uid"
     t.string   "last_computed_score"
-    t.string   "poster"
+    t.string   "horizontal"
+    t.string   "vertical"
   end
 
   create_table "tweets", :force => true do |t|

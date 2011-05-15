@@ -2,6 +2,9 @@
 
 class PosterUploader < CarrierWave::Uploader::Base
 
+  def default_url
+    "default/" + [version_name, "default.jpg"].compact.join('_')
+  end
   # Include RMagick or ImageScience support:
   include CarrierWave::RMagick
   # include CarrierWave::ImageScience
@@ -29,9 +32,6 @@ class PosterUploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files:
-  version :thumb do
-    process :resize_to_limit => [200, 200]
-  end
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:

@@ -24,6 +24,7 @@ gem 'whenever', :require => false
 group :test do
   gem 'guard'
   gem 'guard-test'
+  gem 'guard-compass'
   gem 'faker'
   gem 'timecop'
   gem 'mocha', '0.9.8', :require => false

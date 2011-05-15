@@ -1,0 +1,42 @@
+/* content */
+
+.content {
+	width: 940px;
+	margin: 0 auto;
+}
+
+$subheading-color: red;
+$heading-color: #111111;
+$heading-font: 'Ubuntu';
+$subheading-font: 'Play';
+
+/* header */
+.main-header-wrapper, .sub-header-wrapper {
+	height: 40px;
+	min-width: 960px;
+    .header {
+        line-height: 40px;
+        color: #fff;
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+    }
+}
+.main-header-wrapper {
+	background-color: $heading-color;
+    h1 { 
+        font-family: $heading-font, arial, serif;
+        font-size: 32px;
+        font-weight: bold;
+    }
+}
+
+.sub-header-wrapper {
+	background-color: $subheading-color;
+    h1 { 
+        font-family: $subheading-font, arial, serif;
+        font-size: 26px;
+        font-weight: bold;
+    }
+}

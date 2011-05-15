@@ -25,19 +25,6 @@ $(document).ready(function() {
 		return true;
 	});
 
-	$('#carousel').cycle({
-		fx: 'fade',
-		timeout: 14000,
-		speed: 1000,
-		startingSlide: 0,
-		pager: '#nav',
-		pagerAnchorBuilder: function(idx, slide) {
-			// return selector string for existing anchor 
-			return '#nav li:eq(' + idx + ') a';
-		},
-		cleartypeNoBg: true
-	});
-
 	$(".tweet").live("click", function() {
 		window.location = $(this).find(".avatar").attr("rel");
 		return true;

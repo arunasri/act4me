@@ -1,0 +1,52 @@
+$ninesixty-columns: 24;
+$bubble-image   : "/images/used/bubble1.png";
+.container_24 {
+   @include grid-system(24); 
+}
+
+@mixin no_repeat_image($image){
+   background-image: url($image);
+   background-repeat: no-repeat;
+}
+
+.clear {
+   clear: both;
+   display: block;
+   height: 0;
+   overflow: hidden;
+   visibility: hidden;
+   width: 0;
+}
+
+#show-page{
+
+   .bubble{
+      background : url($bubble-image) no-repeat scroll left top transparent;
+      min-height: 180px;
+   }
+   .poster{
+      padding-bottom: 20px;
+   }
+   .tweet-text {
+      padding-top: 25px;
+      min-height: 110px;
+      p {
+         padding-left: 2px;
+      }
+   }
+}
+
+#index-page{
+   .verdict{
+      position: absolute;
+      top: 0px;
+      left: 0px;
+   }
+   .movie-info{
+      a {
+         font-size: 12px;
+         font-weight: bold;
+         text-decoration: none;
+      }
+   }
+}

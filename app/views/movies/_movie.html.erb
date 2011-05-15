@@ -1,40 +1,12 @@
-<div class="poster">
-    <%= image_tag(movie.poster_url.to_s)  %>
-</div>
+<div class="grid_24">
+  <div class="grid_10 alpha poster">
+    <%= image_tag(movie.horizontal.thumb.to_s)  %>
+  </div>
 
-<div class="movie-info">
-  <div class="movie-info-inner">
-    <div class="movie-meta">
-      <div class="title">
-        <h3><%= movie.name %></h3>
-      </div>
-      <div class="credits">
-        <span class="label">Starring: </span>
-        <span class="content"><%= movie.cast %></span>
-      </div>
-      <div class="credits">
-        <span class="label">Directed: </span>
-        <span class="content"><%= movie.director %></span>
-      </div>
-      <div class="credits">
-        <span class="label">Produced: </span>
-        <span class="content"><%= movie.producer %></span>
-      </div>
-      <div class="credits">
-        <span class="label">Released: </span>
-        <span class="content"><%= movie.released_on.strftime("%d %B, %Y.") %></span>
-      </div>
-    </div>
-    <div class="movie-score">
-      <div class="percentage">
-        <%= image_tag movie.computed_score.to_i > 50 ? "hit.png" : "flop.png" %>
-        <%= movie.formatted_score %>
-      </div>
-      <p>
-        <%= link_to "#{movie.tweets.positive.count} positive", positive_movie_path(movie) %> |
-        <%= link_to "#{movie.tweets.negative.count} negative", negative_movie_path(movie) %> |
-        <%= link_to "#{movie.tweets.mixed.count} mixed", mixed_movie_path(movie) %>
-      </p>
-    </div>
+  <div class="grid_14 omega">
+    <h3><%= movie.name %></h3>
+    <span class="label">Starring: </span>
+    <span class="content"><%= movie.cast %></span>
   </div>
 </div>
+<div class="clear"></div>
