@@ -3,7 +3,8 @@
 class PosterUploader < CarrierWave::Uploader::Base
 
   def default_url
-    "default/" + [version_name, "default.jpg"].compact.join('_')
+    folder = HorizontalUploader.new.class.name.tableize.split("_").first
+    "default/#{folder}/" + [version_name, "default.jpg"].compact.join('_')
   end
   # Include RMagick or ImageScience support:
   include CarrierWave::RMagick

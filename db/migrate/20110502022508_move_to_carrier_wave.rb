@@ -6,7 +6,8 @@ class MoveToCarrierWave < ActiveRecord::Migration
   end
 
   def self.down
-    remove_column :movies, :poster
+    remove_column :movies, :horizontal
+    remove_column :movies, :vertical
     #add_column :movies, :cover_image_uid, :string
   end
 end
