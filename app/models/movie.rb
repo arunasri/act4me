@@ -1,7 +1,6 @@
 class Movie < ActiveRecord::Base
 
   mount_uploader :vertical,   VerticalUploader
-
   mount_uploader :horizontal, HorizontalUploader
 
   validates :name, :presence => true, :uniqueness => true

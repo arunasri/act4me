@@ -1,12 +1,9 @@
 <div class="grid_24">
   <div class="grid_10 alpha poster">
-    <%= image_tag(movie.horizontal.thumb.to_s)  %>
+    <%= image_tag(movie.horizontal.thumb.url.to_s)  %>
   </div>
 
   <div class="grid_14 omega">
-    <h3><%= movie.name %></h3>
-    <span class="label">Starring: </span>
-    <span class="content"><%= movie.cast %></span>
   </div>
 </div>
 <div class="clear"></div>
