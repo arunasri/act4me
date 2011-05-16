@@ -2,12 +2,12 @@ $(document).ready(function() {
     $('ul#quotes').quote_rotator();
 	// infinitescroll() is called on the element that surrounds
 	// the items you will be loading more of
-	$('.pager .tweets .parent').infinitescroll({
+	$('#twitter-area .container_24').infinitescroll({
 		navSelector: "#next",
 		nextSelector: "#next a:first",
-		itemSelector: "div.bubble",
+		itemSelector: "div.bubbles",
 		loadingText: "Loading more reviews...",
-		loadingImg: "/images/ajax-loading.gif",
+		loadingImg: "/images/used/ajax-loading.gif",
 		donetext: "We've hit the end of the reviews."
 	},
 	function(elements) {

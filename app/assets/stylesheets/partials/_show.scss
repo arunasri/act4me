@@ -24,28 +24,12 @@ $bubble-image: "/images/used/bubble1.png";
     background-repeat: no-repeat;
 }
 
-#show-page{
-   .bubble{
-      background : url($bubble-image) no-repeat scroll left top transparent;
-      min-height: 180px;
-   }
-   .poster{
-      padding-bottom: 20px;
-   }
-
-   .tweet-text {
-      padding-top: 25px;
-      min-height: 110px;
-      p {
-         padding-left: 2px;
-      }
-   }
-}
 
 #movies-page{
     height: 800px;
     background-color: #E8E8DC;
 }
+
 #movies{
     .rating-pod {
         background-color: #333333;
@@ -101,3 +85,27 @@ $bubble-image: "/images/used/bubble1.png";
     }
 }
 
+#twitter-area {
+    padding-top: 20px;
+    background-color: #E8E8DC;
+    overflow: auto;
+   .bubble{
+      background : url($bubble-image) no-repeat scroll left top transparent;
+      min-height: 180px;
+   }
+   .poster{
+      padding-bottom: 20px;
+   }
+
+   .tweet-text {
+      padding-top: 25px;
+      min-height: 110px;
+      p {
+         padding-left: 2px;
+      }
+   }
+}
+
+p.tweet-box {
+    background: url("/images/used/twitter_logo_right.png") no-repeat scroll 20px 9px transparent
+}

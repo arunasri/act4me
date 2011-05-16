@@ -18,11 +18,13 @@
   red
 <% end %>
 
+
 <div id="poster-area">
   <div class="container_24">
     <%= render @movie %>
   </div>
 </div>
+
 <div class="sub-header-wrapper <%= content_for :color %>">
   <div class="content header">
     <%= image_tag "used/twitter_logo_right.png" %>
@@ -32,8 +34,6 @@
 
 <div id="twitter-area">
   <div class="container_24">
-    <div id="show-page">
-      <%= render :partial => "/tweets/tweets", :locals => { :tweets => @tweets } %>
-    </div>
+    <%= render :partial => "/tweets/tweets", :locals => { :tweets => @tweets } %>
   </div>
 </div>

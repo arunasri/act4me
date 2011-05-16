@@ -1,42 +1,26 @@
-<div class="grid_24">
-  <div class="poster-place">
-    <div class="grid_10 alpha poster">
-      <%= image_tag(movie.horizontal.thumb.url.to_s)  %>
-    </div>
-    <div class="grid_14 omega">
-      <div class="score-board grid_14">
-        <span class="percentage"><%= movie.computed_score %></span>
-        <span class="percentage-sign">%</span>
-        <span class="voters"><%= movie.tweets.assesed.count %> tweets</span>
-      </div>
-      <div class="details grid_14">
-        <p><span>Released on </span> <%= movie.released_on.strftime("%d %B, %Y") %></p>
-        <p><span>Starring </span> <%= movie.cast %></p>
-        <p><span>Director </span> <%= movie.director %></p>
-        <p><span>Producer </span> <%= movie.producer %></p>
-      </div>
-      <div class="grid_14">
-        <%# link_to 'Trailer', movie, :class => 'button' %>
-        <%# link_to 'Songs', movie, :class => 'button' %>
+<div class="grid_10 alpha poster">
+  <%= image_tag(movie.horizontal.thumb.url.to_s)  %>
+</div>
+<div class="grid_14 omega">
+  <div class="score-board grid_14">
+    <span class="percentage"><%= movie.computed_score %></span>
+    <span class="percentage-sign">%</span>
+    <span class="voters"><%= movie.tweets.assesed.count %> tweets</span>
+  </div>
+  <div class="details grid_14">
+    <p><span>Released on </span> <%= movie.released_on.strftime("%d %B, %Y") %></p>
+    <p><span>Starring </span> <%= movie.cast %></p>
+    <p><span>Director </span> <%= movie.director %></p>
+    <p><span>Producer </span> <%= movie.producer %></p>
+  </div>
+  <div class="grid_14">
     <ul id="quotes">
-      <% @tweets.each do | tweet | %>
-        <li> 
-          <blockquote>
-          <p>
-            <%= auto_link(simple_format(h(tweet.text)), :html => {:class => 'auto-link', :target => :_blank } ) %>
-          </p>
-          </blockquote>
-          <p>
-            <%= image_tag tweet.profile_image_url, :rel => tweet.twitter_url %>
-            <%= tweet.from_user %>
-          </p>
-        </li>
-      <% end %>
+      <%= render :partial => 'quote', :collection => movie.tweets.assesed %> 
     </ul>
-
-
-      </div>
-    </div>
+  </div>
+  <div class="grid_14">
+    <% link_to 'Trailer', movie, :class => 'button' %>
+    <% link_to 'Songs', movie, :class => 'button' %>
   </div>
 </div>
 <div class="clear"></div>

@@ -118,33 +118,32 @@ a {
 /* line 48, ../../../app/assets/stylesheets/partials/_header.scss */
 .sub-header-wrapper h1 {
   font-family: "Play", arial, serif;
-  font-size: 26px;
+  font-size: 20px;
   font-weight: bold;
-  float: right;
   margin-bottom: 0px;
 }
 
-/* line 57, ../../../app/assets/stylesheets/partials/_header.scss */
+/* line 56, ../../../app/assets/stylesheets/partials/_header.scss */
 .score-board {
   line-height: 40px;
   font-family: "Play", arial, serif;
   color: #FFFFFF;
 }
 
-/* line 63, ../../../app/assets/stylesheets/partials/_header.scss */
+/* line 62, ../../../app/assets/stylesheets/partials/_header.scss */
 .percentage {
   font-weight: bold;
   font-size: 64px;
 }
 
-/* line 68, ../../../app/assets/stylesheets/partials/_header.scss */
+/* line 67, ../../../app/assets/stylesheets/partials/_header.scss */
 .percentage-sign {
   font-weight: normal;
   font-size: 32px;
   vertical-align: top;
 }
 
-/* line 74, ../../../app/assets/stylesheets/partials/_header.scss */
+/* line 73, ../../../app/assets/stylesheets/partials/_header.scss */
 .voters {
   font-size: 13px;
   font-style: italic;
@@ -153,41 +152,29 @@ a {
   color: #666666;
 }
 
-/* line 82, ../../../app/assets/stylesheets/partials/_header.scss */
+/* line 81, ../../../app/assets/stylesheets/partials/_header.scss */
 #poster-area {
-  min-height: 380px;
   padding-top: 10px;
   background-color: black;
   color: white;
 }
-/* line 87, ../../../app/assets/stylesheets/partials/_header.scss */
+/* line 85, ../../../app/assets/stylesheets/partials/_header.scss */
 #poster-area .details {
   border-bottom: 1px solid #333333;
 }
-/* line 89, ../../../app/assets/stylesheets/partials/_header.scss */
+/* line 87, ../../../app/assets/stylesheets/partials/_header.scss */
 #poster-area .details p {
   font-family: "Play", arial, serif;
   margin-bottom: 10px;
 }
-/* line 92, ../../../app/assets/stylesheets/partials/_header.scss */
+/* line 90, ../../../app/assets/stylesheets/partials/_header.scss */
 #poster-area .details p span {
   font-weight: italic;
   color: #666666;
   padding-right: 10px;
 }
 
-/* line 101, ../../../app/assets/stylesheets/partials/_header.scss */
-#twitter-area {
-  padding-top: 20px;
-  background-color: #E8E8DC;
-}
-
-/* line 105, ../../../app/assets/stylesheets/partials/_header.scss */
-p.tweet-box {
-  background: url("/images/used/twitter_logo_right.png") no-repeat scroll 20px 9px transparent;
-}
-
-/* line 109, ../../../app/assets/stylesheets/partials/_header.scss */
+/* line 100, ../../../app/assets/stylesheets/partials/_header.scss */
 .button {
   padding: 5px 10px;
   display: inline;
@@ -202,12 +189,12 @@ p.tweet-box {
   text-shadow: 1px 1px #666;
 }
 
-/* line 122, ../../../app/assets/stylesheets/partials/_header.scss */
+/* line 113, ../../../app/assets/stylesheets/partials/_header.scss */
 .button:hover {
   background-position: 0 -48px;
 }
 
-/* line 125, ../../../app/assets/stylesheets/partials/_header.scss */
+/* line 116, ../../../app/assets/stylesheets/partials/_header.scss */
 .button:active {
   background-position: 0 top;
   position: relative;
@@ -215,99 +202,104 @@ p.tweet-box {
   padding: 6px 10px 4px;
 }
 
-/* line 132, ../../../app/assets/stylesheets/partials/_header.scss */
+/* line 123, ../../../app/assets/stylesheets/partials/_header.scss */
 .button.red {
   background-color: #e50000;
 }
 
-/* line 133, ../../../app/assets/stylesheets/partials/_header.scss */
+/* line 124, ../../../app/assets/stylesheets/partials/_header.scss */
 .button.purple {
   background-color: #9400bf;
 }
 
-/* line 134, ../../../app/assets/stylesheets/partials/_header.scss */
+/* line 125, ../../../app/assets/stylesheets/partials/_header.scss */
 .button.green {
   background-color: #58aa00;
 }
 
-/* line 135, ../../../app/assets/stylesheets/partials/_header.scss */
+/* line 126, ../../../app/assets/stylesheets/partials/_header.scss */
 .button.orange {
   background-color: #ff9c00;
 }
 
-/* line 136, ../../../app/assets/stylesheets/partials/_header.scss */
+/* line 127, ../../../app/assets/stylesheets/partials/_header.scss */
 .button.blue {
   background-color: #2c6da0;
 }
 
-/* line 137, ../../../app/assets/stylesheets/partials/_header.scss */
+/* line 128, ../../../app/assets/stylesheets/partials/_header.scss */
 .button.black {
   background-color: #333;
 }
 
-/* line 138, ../../../app/assets/stylesheets/partials/_header.scss */
+/* line 129, ../../../app/assets/stylesheets/partials/_header.scss */
 .button.white {
   background-color: #fff;
   color: #000;
   text-shadow: 1px 1px #fff;
 }
 
-/* line 139, ../../../app/assets/stylesheets/partials/_header.scss */
+/* line 130, ../../../app/assets/stylesheets/partials/_header.scss */
 .button.small {
   font-size: 75%;
   padding: 3px 7px;
 }
 
-/* line 140, ../../../app/assets/stylesheets/partials/_header.scss */
+/* line 131, ../../../app/assets/stylesheets/partials/_header.scss */
 .button.small:hover {
   background-position: 0 -50px;
 }
 
-/* line 141, ../../../app/assets/stylesheets/partials/_header.scss */
+/* line 132, ../../../app/assets/stylesheets/partials/_header.scss */
 .button.small:active {
   padding: 4px 7px 2px;
   background-position: 0 top;
 }
 
-/* line 142, ../../../app/assets/stylesheets/partials/_header.scss */
+/* line 133, ../../../app/assets/stylesheets/partials/_header.scss */
 .button.large {
   font-size: 125%;
   padding: 7px 12px;
 }
 
-/* line 143, ../../../app/assets/stylesheets/partials/_header.scss */
+/* line 134, ../../../app/assets/stylesheets/partials/_header.scss */
 .button.large:hover {
   background-position: 0 -35px;
 }
 
-/* line 144, ../../../app/assets/stylesheets/partials/_header.scss */
+/* line 135, ../../../app/assets/stylesheets/partials/_header.scss */
 .button.large:active {
   padding: 8px 12px 6px;
   background-position: 0 top;
 }
 
-/* line 147, ../../../app/assets/stylesheets/partials/_header.scss */
+/* line 138, ../../../app/assets/stylesheets/partials/_header.scss */
 ul#quotes {
   cursor: pointer;
   list-style: none outside none;
-  margin: 25px 0 35px 100px;
   width: 350px;
+  min-height: 180px;
   font-family: "Ubuntu", arial, serif;
   font-weight: bold;
+  margin-top: 20px;
 }
-/* line 154, ../../../app/assets/stylesheets/partials/_header.scss */
+/* line 146, ../../../app/assets/stylesheets/partials/_header.scss */
 ul#quotes li {
-  padding-bottom: 10px;
+  font-size: 16px;
 }
-/* line 156, ../../../app/assets/stylesheets/partials/_header.scss */
+/* line 148, ../../../app/assets/stylesheets/partials/_header.scss */
 ul#quotes li blockquote p {
-  padding-bottom: 0;
+  padding-bottom: 5px;
 }
-/* line 160, ../../../app/assets/stylesheets/partials/_header.scss */
+/* line 151, ../../../app/assets/stylesheets/partials/_header.scss */
+ul#quotes li p {
+  margin-bottom: 0px;
+}
+/* line 153, ../../../app/assets/stylesheets/partials/_header.scss */
 ul#quotes li p img {
   margin-right: 10px;
 }
-/* line 164, ../../../app/assets/stylesheets/partials/_header.scss */
+/* line 157, ../../../app/assets/stylesheets/partials/_header.scss */
 ul#quotes li cite {
   margin: -35px 0 0 20px;
 }
@@ -822,31 +814,12 @@ ul#quotes li cite {
 }
 
 /* line 28, ../../../app/assets/stylesheets/partials/_show.scss */
-#show-page .bubble {
-  background: url("/images/used/bubble1.png") no-repeat scroll left top transparent;
-  min-height: 180px;
-}
-/* line 32, ../../../app/assets/stylesheets/partials/_show.scss */
-#show-page .poster {
-  padding-bottom: 20px;
-}
-/* line 36, ../../../app/assets/stylesheets/partials/_show.scss */
-#show-page .tweet-text {
-  padding-top: 25px;
-  min-height: 110px;
-}
-/* line 39, ../../../app/assets/stylesheets/partials/_show.scss */
-#show-page .tweet-text p {
-  padding-left: 2px;
-}
-
-/* line 45, ../../../app/assets/stylesheets/partials/_show.scss */
 #movies-page {
   height: 800px;
   background-color: #E8E8DC;
 }
 
-/* line 50, ../../../app/assets/stylesheets/partials/_show.scss */
+/* line 34, ../../../app/assets/stylesheets/partials/_show.scss */
 #movies .rating-pod {
   background-color: #333333;
   border-radius: 0 0 6px 6px;
@@ -856,7 +829,7 @@ ul#quotes li cite {
   padding: 5px 10px 5px 7px;
   position: relative;
 }
-/* line 58, ../../../app/assets/stylesheets/partials/_show.scss */
+/* line 42, ../../../app/assets/stylesheets/partials/_show.scss */
 #movies .rating-pod .percent {
   background-position: 100% 50%;
   background-repeat: no-repeat;
@@ -866,7 +839,7 @@ ul#quotes li cite {
   font-weight: bold;
   padding-right: 20px;
 }
-/* line 66, ../../../app/assets/stylesheets/partials/_show.scss */
+/* line 50, ../../../app/assets/stylesheets/partials/_show.scss */
 #movies .rating-pod .percent span.sign {
   font-size: 12px;
   font-weight: normal;
@@ -874,34 +847,64 @@ ul#quotes li cite {
   padding-left: 2px;
   vertical-align: top;
 }
-/* line 74, ../../../app/assets/stylesheets/partials/_show.scss */
+/* line 58, ../../../app/assets/stylesheets/partials/_show.scss */
 #movies .rating-pod .votes {
   float: right;
   font-size: 11px;
   font-style: italic;
   line-height: 28px;
 }
-/* line 81, ../../../app/assets/stylesheets/partials/_show.scss */
+/* line 65, ../../../app/assets/stylesheets/partials/_show.scss */
 #movies .title {
   color: #000000;
   display: block;
   font-weight: bold;
 }
-/* line 87, ../../../app/assets/stylesheets/partials/_show.scss */
+/* line 71, ../../../app/assets/stylesheets/partials/_show.scss */
 #movies .small-movie {
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 0px;
   padding-right: 0px;
 }
-/* line 93, ../../../app/assets/stylesheets/partials/_show.scss */
+/* line 77, ../../../app/assets/stylesheets/partials/_show.scss */
 #movies .small-movie .poster img {
   display: block;
   height: 173px;
   width: 138px;
 }
 
-/* line 13, ../../../app/assets/stylesheets/grid.scss */
+/* line 88, ../../../app/assets/stylesheets/partials/_show.scss */
+#twitter-area {
+  padding-top: 20px;
+  background-color: #E8E8DC;
+  overflow: auto;
+}
+/* line 92, ../../../app/assets/stylesheets/partials/_show.scss */
+#twitter-area .bubble {
+  background: url("/images/used/bubble1.png") no-repeat scroll left top transparent;
+  min-height: 180px;
+}
+/* line 96, ../../../app/assets/stylesheets/partials/_show.scss */
+#twitter-area .poster {
+  padding-bottom: 20px;
+}
+/* line 100, ../../../app/assets/stylesheets/partials/_show.scss */
+#twitter-area .tweet-text {
+  padding-top: 25px;
+  min-height: 110px;
+}
+/* line 103, ../../../app/assets/stylesheets/partials/_show.scss */
+#twitter-area .tweet-text p {
+  padding-left: 2px;
+}
+
+/* line 109, ../../../app/assets/stylesheets/partials/_show.scss */
+p.tweet-box {
+  background: url("/images/used/twitter_logo_right.png") no-repeat scroll 20px 9px transparent;
+}
+
+/* line 12, ../../../app/assets/stylesheets/grid.scss */
 .container_12 {
   margin-left: auto;
   margin-right: auto;
@@ -1160,7 +1163,7 @@ ul#quotes li cite {
   left: -960px;
 }
 
-/* line 18, ../../../app/assets/stylesheets/grid.scss */
+/* line 17, ../../../app/assets/stylesheets/grid.scss */
 .clear {
   clear: both;
   display: block;

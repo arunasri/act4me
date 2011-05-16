@@ -47,9 +47,8 @@ a {
     }
     h1 { 
         font-family: $subheading-font, arial, serif;
-        font-size: 26px;
+        font-size: 20px;
         font-weight: bold;
-        float: right;
         margin-bottom: 0px;
     }
 }
@@ -80,7 +79,6 @@ a {
 }
 
 #poster-area {
-    min-height: 380px;
     padding-top: 10px;
     background-color: $poster-background;
     color: $headers-color;
@@ -98,13 +96,6 @@ a {
     }
 }
 
-#twitter-area {
-    padding-top: 20px;
-    background-color: #E8E8DC;
-}
-p.tweet-box {
-    background: url("/images/used/twitter_logo_right.png") no-repeat scroll 20px 9px transparent
-}
 
 .button {
     padding: 5px 10px;
@@ -147,16 +138,18 @@ p.tweet-box {
 ul#quotes {
     cursor: pointer;
     list-style: none outside none;
-    margin: 25px 0 35px 100px;
     width: 350px;
+    min-height: 180px;
     font-family: $heading-font, arial, serif;
     font-weight: bold;
+    margin-top: 20px;
     li {
-    padding-bottom: 10px;
+       font-size: 16px;
       blockquote p {
-         padding-bottom: 0;
+         padding-bottom: 5px;
       }
       p {
+         margin-bottom: 0px;
          img {
             margin-right: 10px;
          }

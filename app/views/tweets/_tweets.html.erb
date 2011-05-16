@@ -1,5 +1,11 @@
-
 <% tweets.in_groups_of(3).each do | tg | %>
-  <%= render :partial => "/tweets/tweet", :collection => tg, :as => :tweet %>
-  <div class="clear"></div>
+  <div class="bubbles">
+    <%= render :partial => "/tweets/tweet", :collection => tg, :as => :tweet %>
+    <div class="clear"></div>
+  </div>
+<% end %>
+<% if tweets.next_page %>
+  <div id="next">
+    <%= link_to 'next', url_for(params.merge(:page => tweets.next_page)) %>
+  </div>
 <% end %>
