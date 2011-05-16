@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+    $('ul#quotes').quote_rotator();
 	// infinitescroll() is called on the element that surrounds
 	// the items you will be loading more of
 	$('.pager .tweets .parent').infinitescroll({

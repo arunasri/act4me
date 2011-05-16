@@ -14,7 +14,26 @@
   <%= @movie.name %>
 <% end %>
 
-<div id="show-page">
-  <%= render @movie %>
-  <%= render :partial => "/tweets/tweets", :locals => { :tweets => @tweets } %>
+<% content_for :color do %>
+  red
+<% end %>
+
+<div id="poster-area">
+  <div class="container_24">
+    <%= render @movie %>
+  </div>
+</div>
+<div class="sub-header-wrapper <%= content_for :color %>">
+  <div class="content header">
+    <%= image_tag "used/twitter_logo_right.png" %>
+    <h1> </h1>
+  </div>
+</div>
+
+<div id="twitter-area">
+  <div class="container_24">
+    <div id="show-page">
+      <%= render :partial => "/tweets/tweets", :locals => { :tweets => @tweets } %>
+    </div>
+  </div>
 </div>

@@ -1,0 +1,14 @@
+<div class="grid_4">
+  <div class="small-movie">
+    <div class="poster">
+      <%= link_to image_tag(movie.vertical.thumb.url.to_s), movie %>
+    </div>
+
+    <div class="rating-pod">
+      <div class="percent"><span class="number"><%= movie.computed_score %></span><span class="sign">%</span></div>
+      <div class="votes"><%= movie.tweets.assesed.count %> tweets</div>
+    </div>
+
+    <%= link_to movie.name, movie, :class => 'title' %>
+  </div>
+</div>

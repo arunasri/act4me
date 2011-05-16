@@ -5,6 +5,6 @@ class HorizontalUploader < PosterUploader
     "default/horizontal/" + [version_name, "default.jpg"].compact.join('_')
   end
   version :thumb do
-    process :resize_to_limit => [620, 349]
+    process :resize_to_limit => [380, 354]
   end
 end

@@ -68,177 +68,6 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
-/* line 7, ../../../app/assets/stylesheets/partials/_layout.scss */
-.clearfix {
-  clear: both;
-}
-
-/* line 11, ../../../app/assets/stylesheets/partials/_layout.scss */
-a {
-  text-decoration: none;
-}
-
-/* line 12, ../../../app/assets/stylesheets/partials/_layout.scss */
-.main-wrapper {
-  margin-left: auto;
-  margin-right: auto;
-  width: 960px;
-}
-/* line 16, ../../../app/assets/stylesheets/partials/_layout.scss */
-.main-wrapper #header,
-.main-wrapper #footer,
-.main-wrapper #content {
-  display: inline;
-  float: left;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-/* line 18, ../../../app/assets/stylesheets/partials/_layout.scss */
-.main-wrapper #header, .main-wrapper #footer {
-  width: 940px;
-}
-/* line 20, ../../../app/assets/stylesheets/partials/_layout.scss */
-.main-wrapper #content {
-  width: 940px;
-}
-/* line 23, ../../../app/assets/stylesheets/partials/_layout.scss */
-.main-wrapper .movie-information {
-  background-color: #FBFBFB;
-  border-bottom: 1px solid #D5D3BE;
-  border-top: 1px solid #D5D3BE;
-  font-size: 16px;
-  min-width: 960px;
-  padding: 15px 0;
-  position: relative;
-}
-/* line 31, ../../../app/assets/stylesheets/partials/_layout.scss */
-.main-wrapper .movie-information .content {
-  margin: 0 auto;
-  width: 940px;
-}
-/* line 34, ../../../app/assets/stylesheets/partials/_layout.scss */
-.main-wrapper .movie-information .content h2 {
-  font-size: 22px;
-  font-weight: normal;
-  line-height: 12px;
-}
-/* line 38, ../../../app/assets/stylesheets/partials/_layout.scss */
-.main-wrapper .movie-information .content h2 a {
-  color: #000000;
-}
-/* line 45, ../../../app/assets/stylesheets/partials/_layout.scss */
-.main-wrapper .one-column {
-  overflow: hidden;
-  width: 940px;
-}
-/* line 48, ../../../app/assets/stylesheets/partials/_layout.scss */
-.main-wrapper .one-column .movie {
-  float: left;
-  width: 140px;
-}
-/* line 51, ../../../app/assets/stylesheets/partials/_layout.scss */
-.main-wrapper .one-column .movie .poster {
-  border: 1px solid #D0D0C5;
-}
-/* line 53, ../../../app/assets/stylesheets/partials/_layout.scss */
-.main-wrapper .one-column .movie .poster img {
-  display: block;
-  width: 138px;
-  width: 140px;
-}
-/* line 59, ../../../app/assets/stylesheets/partials/_layout.scss */
-.main-wrapper .one-column .movie .twitter-info {
-  background-color: #333333;
-  border-radius: 0 0 6px 6px;
-  color: #CCCCCC;
-  margin: 1px;
-  overflow: hidden;
-  padding: 5px 10px 5px 7px;
-  position: relative;
-}
-/* line 67, ../../../app/assets/stylesheets/partials/_layout.scss */
-.main-wrapper .one-column .movie .twitter-info .tweets {
-  float: right;
-  font-size: 11px;
-  font-style: italic;
-}
-/* line 72, ../../../app/assets/stylesheets/partials/_layout.scss */
-.main-wrapper .one-column .movie .twitter-info .score {
-  background-position: 100% 50%;
-  background-repeat: no-repeat;
-  color: #FFFFFF;
-  float: left;
-  font-size: 18px;
-  font-weight: bold;
-  padding-right: 20px;
-}
-/* line 81, ../../../app/assets/stylesheets/partials/_layout.scss */
-.main-wrapper .one-column .movie .twitter-info .percent {
-  background-position: 100% 50%;
-  background-repeat: no-repeat;
-  color: #FFFFFF;
-  float: left;
-  font-size: 18px;
-  font-weight: bold;
-  padding-right: 20px;
-}
-/* line 89, ../../../app/assets/stylesheets/partials/_layout.scss */
-.main-wrapper .one-column .movie .twitter-info .percent .percent-sign {
-  font-size: 12px;
-  font-weight: normal;
-  line-height: 21px;
-  padding-left: 2px;
-  vertical-align: top;
-}
-/* line 99, ../../../app/assets/stylesheets/partials/_layout.scss */
-.main-wrapper .one-column .movie h4 {
-  font-size: 12px;
-  margin-top: 3px;
-  overflow: hidden;
-  position: relative;
-  white-space: nowrap;
-}
-/* line 105, ../../../app/assets/stylesheets/partials/_layout.scss */
-.main-wrapper .one-column .movie h4 .title {
-  color: #000000;
-  display: block;
-  font-weight: bold;
-}
-
-/* line 120, ../../../app/assets/stylesheets/partials/_layout.scss */
-.left-tweets {
-  float: left;
-  width: 300px;
-}
-
-/* line 125, ../../../app/assets/stylesheets/partials/_layout.scss */
-.tweet {
-  width: 300px;
-  background-image: url("/images/used/bubble1.png");
-  background-repeat: no-repeat;
-  background-position: right top;
-  height: 220px;
-}
-/* line 131, ../../../app/assets/stylesheets/partials/_layout.scss */
-.tweet img {
-  margin-top: 20px;
-  margin-left: 20px;
-  padding-left: 8px;
-  padding-top: 8px;
-}
-
-/* line 151, ../../../app/assets/stylesheets/partials/_layout.scss */
-.love {
-  background-image: url("/images/used/icon-love-small.png");
-  background-repeat: no-repeat;
-}
-
-/* line 155, ../../../app/assets/stylesheets/partials/_layout.scss */
-.hate {
-  background-image: url("/images/used/icon-hate-small.png");
-  background-repeat: no-repeat;
-}
-
 /* content */
 /* line 3, ../../../app/assets/stylesheets/partials/_header.scss */
 .content {
@@ -246,46 +75,244 @@ a {
   margin: 0 auto;
 }
 
+/* line 17, ../../../app/assets/stylesheets/partials/_header.scss */
+a {
+  text-decoration: none;
+}
+
 /* header */
-/* line 14, ../../../app/assets/stylesheets/partials/_header.scss */
+/* line 22, ../../../app/assets/stylesheets/partials/_header.scss */
 .main-header-wrapper, .sub-header-wrapper {
   height: 40px;
   min-width: 960px;
+  color: white;
 }
-/* line 17, ../../../app/assets/stylesheets/partials/_header.scss */
+/* line 26, ../../../app/assets/stylesheets/partials/_header.scss */
 .main-header-wrapper .header, .sub-header-wrapper .header {
   line-height: 40px;
-  color: #fff;
 }
-/* line 20, ../../../app/assets/stylesheets/partials/_header.scss */
+/* line 28, ../../../app/assets/stylesheets/partials/_header.scss */
 .main-header-wrapper .header a, .sub-header-wrapper .header a {
-  text-decoration: none;
-  color: #fff;
+  color: white;
 }
 
-/* line 26, ../../../app/assets/stylesheets/partials/_header.scss */
+/* line 34, ../../../app/assets/stylesheets/partials/_header.scss */
 .main-header-wrapper {
   background-color: #111111;
 }
-/* line 28, ../../../app/assets/stylesheets/partials/_header.scss */
+/* line 36, ../../../app/assets/stylesheets/partials/_header.scss */
 .main-header-wrapper h1 {
   font-family: "Ubuntu", arial, serif;
   font-size: 32px;
   font-weight: bold;
 }
 
-/* line 35, ../../../app/assets/stylesheets/partials/_header.scss */
+/* line 43, ../../../app/assets/stylesheets/partials/_header.scss */
 .sub-header-wrapper {
-  background-color: red;
+  background-color: green;
 }
-/* line 37, ../../../app/assets/stylesheets/partials/_header.scss */
+/* line 45, ../../../app/assets/stylesheets/partials/_header.scss */
+.sub-header-wrapper img {
+  float: left;
+}
+/* line 48, ../../../app/assets/stylesheets/partials/_header.scss */
 .sub-header-wrapper h1 {
   font-family: "Play", arial, serif;
   font-size: 26px;
   font-weight: bold;
+  float: right;
+  margin-bottom: 0px;
 }
 
-/* line 3, ../../../app/assets/stylesheets/partials/_show.scss */
+/* line 57, ../../../app/assets/stylesheets/partials/_header.scss */
+.score-board {
+  line-height: 40px;
+  font-family: "Play", arial, serif;
+  color: #FFFFFF;
+}
+
+/* line 63, ../../../app/assets/stylesheets/partials/_header.scss */
+.percentage {
+  font-weight: bold;
+  font-size: 64px;
+}
+
+/* line 68, ../../../app/assets/stylesheets/partials/_header.scss */
+.percentage-sign {
+  font-weight: normal;
+  font-size: 32px;
+  vertical-align: top;
+}
+
+/* line 74, ../../../app/assets/stylesheets/partials/_header.scss */
+.voters {
+  font-size: 13px;
+  font-style: italic;
+  margin-left: 10px;
+  vertical-align: top;
+  color: #666666;
+}
+
+/* line 82, ../../../app/assets/stylesheets/partials/_header.scss */
+#poster-area {
+  min-height: 380px;
+  padding-top: 10px;
+  background-color: black;
+  color: white;
+}
+/* line 87, ../../../app/assets/stylesheets/partials/_header.scss */
+#poster-area .details {
+  border-bottom: 1px solid #333333;
+}
+/* line 89, ../../../app/assets/stylesheets/partials/_header.scss */
+#poster-area .details p {
+  font-family: "Play", arial, serif;
+  margin-bottom: 10px;
+}
+/* line 92, ../../../app/assets/stylesheets/partials/_header.scss */
+#poster-area .details p span {
+  font-weight: italic;
+  color: #666666;
+  padding-right: 10px;
+}
+
+/* line 101, ../../../app/assets/stylesheets/partials/_header.scss */
+#twitter-area {
+  padding-top: 20px;
+  background-color: #E8E8DC;
+}
+
+/* line 105, ../../../app/assets/stylesheets/partials/_header.scss */
+p.tweet-box {
+  background: url("/images/used/twitter_logo_right.png") no-repeat scroll 20px 9px transparent;
+}
+
+/* line 109, ../../../app/assets/stylesheets/partials/_header.scss */
+.button {
+  padding: 5px 10px;
+  display: inline;
+  background: #777777 url(/images/used/button.png) repeat-x bottom;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  text-shadow: 1px 1px #666;
+}
+
+/* line 122, ../../../app/assets/stylesheets/partials/_header.scss */
+.button:hover {
+  background-position: 0 -48px;
+}
+
+/* line 125, ../../../app/assets/stylesheets/partials/_header.scss */
+.button:active {
+  background-position: 0 top;
+  position: relative;
+  top: 1px;
+  padding: 6px 10px 4px;
+}
+
+/* line 132, ../../../app/assets/stylesheets/partials/_header.scss */
+.button.red {
+  background-color: #e50000;
+}
+
+/* line 133, ../../../app/assets/stylesheets/partials/_header.scss */
+.button.purple {
+  background-color: #9400bf;
+}
+
+/* line 134, ../../../app/assets/stylesheets/partials/_header.scss */
+.button.green {
+  background-color: #58aa00;
+}
+
+/* line 135, ../../../app/assets/stylesheets/partials/_header.scss */
+.button.orange {
+  background-color: #ff9c00;
+}
+
+/* line 136, ../../../app/assets/stylesheets/partials/_header.scss */
+.button.blue {
+  background-color: #2c6da0;
+}
+
+/* line 137, ../../../app/assets/stylesheets/partials/_header.scss */
+.button.black {
+  background-color: #333;
+}
+
+/* line 138, ../../../app/assets/stylesheets/partials/_header.scss */
+.button.white {
+  background-color: #fff;
+  color: #000;
+  text-shadow: 1px 1px #fff;
+}
+
+/* line 139, ../../../app/assets/stylesheets/partials/_header.scss */
+.button.small {
+  font-size: 75%;
+  padding: 3px 7px;
+}
+
+/* line 140, ../../../app/assets/stylesheets/partials/_header.scss */
+.button.small:hover {
+  background-position: 0 -50px;
+}
+
+/* line 141, ../../../app/assets/stylesheets/partials/_header.scss */
+.button.small:active {
+  padding: 4px 7px 2px;
+  background-position: 0 top;
+}
+
+/* line 142, ../../../app/assets/stylesheets/partials/_header.scss */
+.button.large {
+  font-size: 125%;
+  padding: 7px 12px;
+}
+
+/* line 143, ../../../app/assets/stylesheets/partials/_header.scss */
+.button.large:hover {
+  background-position: 0 -35px;
+}
+
+/* line 144, ../../../app/assets/stylesheets/partials/_header.scss */
+.button.large:active {
+  padding: 8px 12px 6px;
+  background-position: 0 top;
+}
+
+/* line 147, ../../../app/assets/stylesheets/partials/_header.scss */
+ul#quotes {
+  cursor: pointer;
+  list-style: none outside none;
+  margin: 25px 0 35px 100px;
+  width: 350px;
+  font-family: "Ubuntu", arial, serif;
+  font-weight: bold;
+}
+/* line 154, ../../../app/assets/stylesheets/partials/_header.scss */
+ul#quotes li {
+  padding-bottom: 10px;
+}
+/* line 156, ../../../app/assets/stylesheets/partials/_header.scss */
+ul#quotes li blockquote p {
+  padding-bottom: 0;
+}
+/* line 160, ../../../app/assets/stylesheets/partials/_header.scss */
+ul#quotes li p img {
+  margin-right: 10px;
+}
+/* line 164, ../../../app/assets/stylesheets/partials/_header.scss */
+ul#quotes li cite {
+  margin: -35px 0 0 20px;
+}
+
+/* line 4, ../../../app/assets/stylesheets/partials/_show.scss */
 .container_24 {
   margin-left: auto;
   margin-right: auto;
@@ -784,7 +811,7 @@ a {
   left: -960px;
 }
 
-/* line 12, ../../../app/assets/stylesheets/partials/_show.scss */
+/* line 13, ../../../app/assets/stylesheets/partials/_show.scss */
 .clear {
   clear: both;
   display: block;
@@ -794,36 +821,84 @@ a {
   width: 0;
 }
 
-/* line 23, ../../../app/assets/stylesheets/partials/_show.scss */
+/* line 28, ../../../app/assets/stylesheets/partials/_show.scss */
 #show-page .bubble {
   background: url("/images/used/bubble1.png") no-repeat scroll left top transparent;
   min-height: 180px;
 }
-/* line 27, ../../../app/assets/stylesheets/partials/_show.scss */
+/* line 32, ../../../app/assets/stylesheets/partials/_show.scss */
 #show-page .poster {
   padding-bottom: 20px;
 }
-/* line 30, ../../../app/assets/stylesheets/partials/_show.scss */
+/* line 36, ../../../app/assets/stylesheets/partials/_show.scss */
 #show-page .tweet-text {
   padding-top: 25px;
   min-height: 110px;
 }
-/* line 33, ../../../app/assets/stylesheets/partials/_show.scss */
+/* line 39, ../../../app/assets/stylesheets/partials/_show.scss */
 #show-page .tweet-text p {
   padding-left: 2px;
 }
 
-/* line 40, ../../../app/assets/stylesheets/partials/_show.scss */
-#index-page .verdict {
-  position: absolute;
-  top: 0px;
-  left: 0px;
+/* line 45, ../../../app/assets/stylesheets/partials/_show.scss */
+#movies-page {
+  height: 800px;
+  background-color: #E8E8DC;
 }
-/* line 46, ../../../app/assets/stylesheets/partials/_show.scss */
-#index-page .movie-info a {
-  font-size: 12px;
+
+/* line 50, ../../../app/assets/stylesheets/partials/_show.scss */
+#movies .rating-pod {
+  background-color: #333333;
+  border-radius: 0 0 6px 6px;
+  color: #CCCCCC;
+  margin: 1px;
+  overflow: hidden;
+  padding: 5px 10px 5px 7px;
+  position: relative;
+}
+/* line 58, ../../../app/assets/stylesheets/partials/_show.scss */
+#movies .rating-pod .percent {
+  background-position: 100% 50%;
+  background-repeat: no-repeat;
+  color: #FFFFFF;
+  float: left;
+  font-size: 18px;
   font-weight: bold;
-  text-decoration: none;
+  padding-right: 20px;
+}
+/* line 66, ../../../app/assets/stylesheets/partials/_show.scss */
+#movies .rating-pod .percent span.sign {
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 28px;
+  padding-left: 2px;
+  vertical-align: top;
+}
+/* line 74, ../../../app/assets/stylesheets/partials/_show.scss */
+#movies .rating-pod .votes {
+  float: right;
+  font-size: 11px;
+  font-style: italic;
+  line-height: 28px;
+}
+/* line 81, ../../../app/assets/stylesheets/partials/_show.scss */
+#movies .title {
+  color: #000000;
+  display: block;
+  font-weight: bold;
+}
+/* line 87, ../../../app/assets/stylesheets/partials/_show.scss */
+#movies .small-movie {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+/* line 93, ../../../app/assets/stylesheets/partials/_show.scss */
+#movies .small-movie .poster img {
+  display: block;
+  height: 173px;
+  width: 138px;
 }
 
 /* line 13, ../../../app/assets/stylesheets/grid.scss */

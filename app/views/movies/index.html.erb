@@ -14,16 +14,10 @@
   Recent Releases
 <% end %>
 
-<div id="index-page">
-  <% Movie.limit(4).each do | movie | %>
-    <div class="grid_6">
-      <div class="grid_6">
-        <%= link_to image_tag(movie.vertical.thumb.url.to_s), movie %>
-      </div>
-      <div class="grid_6 movie-info">
-        <%= link_to movie.name, movie, :class => 'title' %>
-        <%= link_to movie.computed_score, movie %>
-      </div>
+<div id="movies-page">
+  <div class="container_24">
+    <div id="movies">
+      <%= render :partial => "small", :collection => @movies, :as => :movie %>
     </div>
-  <% end %>
+  </div>
 </div>

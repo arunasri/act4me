@@ -1,3 +1,4 @@
+
 <% tweets.in_groups_of(3).each do | tg | %>
   <%= render :partial => "/tweets/tweet", :collection => tg, :as => :tweet %>
   <div class="clear"></div>
