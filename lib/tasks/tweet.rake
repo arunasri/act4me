@@ -36,20 +36,6 @@ namespace :tweets do
     call_twitter Movie.this_month
   end
 
-  desc "Search amplify to decode text"
-  task :amplify => :environment do
-    Movie.find(ENV['movie_id']).tweets.find_in_batches do | tweets |
-      tweets.select(&:valid?).reject(&:external?).each do | tweet |
-        begin
-          tweet.amplify
-        rescue
-          puts $!
-          puts tweet.text
-        end
-      end
-    end
-  end
-
   desc "Update stats from amplify results"
   task :stats => :environment do
     Tweet.where(["OPEN_AMPLIFY IS NOT NULL AND MAX_POLARITY IS NULL"]).find_in_batches do | tweets |

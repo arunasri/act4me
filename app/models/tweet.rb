@@ -21,6 +21,7 @@ class Tweet < ActiveRecord::Base
   after_create  :fresh!, :unless => :url?
 
   after_create  :external!, :if => :url?
+
   scope :assesed, where(:category => %w(positive negative mixed))
 
   validates :twitter_id, :presence => true, :retweet => true, :uniqueness => { :scope => :movie_id }
