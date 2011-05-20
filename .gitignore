@@ -4,6 +4,7 @@ config/database.yml
 .bundle
 .rvmrc
 .autotest
+tags
 public/system
 public/uploads
 Guardfile

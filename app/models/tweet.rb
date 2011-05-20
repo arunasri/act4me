@@ -8,28 +8,27 @@ end
 
 class Tweet < ActiveRecord::Base
 
-  belongs_to :movie, :inverse_of => :tweets
-
   serialize :metadata
 
-  cattr_reader :per_page
-
-  @@per_page = 10
   CATEGORIES = %w(positive negative mixed)
 
+  belongs_to :movie, :inverse_of => :tweets
 
-  scope :spotlight, where(:featured => true)
+  belongs_to :keyword, :inverse_of => :tweets
 
   after_create  :fresh!, :unless => :url?
 
   after_create  :external!, :if => :url?
 
-  scope :assesed, where(:category => CATEGORIES)
+  after_create  { | r | keyword.update_attribute(:since_id, r.twitter_id) }
 
   validates :twitter_id, :presence => true, :retweet => true, :uniqueness => { :scope => :movie_id }
 
   validates :text, :presence => true, :retweet => true, :uniqueness => { :scope => [:from_user, :movie_id] }
 
+  scope :assesed, where(:category => CATEGORIES)
+
+  scope :spotlight, where(:featured => true)
 
   def url
     ActionView::Helpers::TextHelper::AUTO_LINK_RE.match(text)[0]
@@ -63,8 +62,7 @@ class Tweet < ActiveRecord::Base
 
     def from_hashie!(h)
       h.stringify_keys!
-      options = { :twitter_id => h.delete("id"), :created_on_twitter => h.delete("created_at") }
-
+      options = { :twitter_id => h.fetch("id"), :created_on_twitter => h.fetch("created_at") }
       new(options.merge(only_related_attributes(h)))
     end
 

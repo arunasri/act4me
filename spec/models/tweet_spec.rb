@@ -94,20 +94,41 @@ describe Tweet, "#scopes"  do
 end
 
 describe Tweet, "#validations"  do
-  subject { @tweet = Factory(:tweet) }
+  subject { @tweet = Factory(:tweet, :twitter_id => "1234") }
   it { should belong_to(:movie) }
   it { should validate_uniqueness_of(:twitter_id).scoped_to(:movie_id) }
   it { should allow_value("welcome to rt wle").for(:text) }
   it { should allow_value("welcome to RTwle").for(:text) }
   it { should_not allow_value("welcome to RT wle").for(:text) }
+  its("keyword.since_id") { should eql(1234) }
 end
 
 describe Tweet, "#from_hashie" do
   subject { @tweet }
+
   before(:all) do
-    @tweet = Tweet.from_hashie!(:created_at => "1/2/2009", :id => "234")
+    hash = {
+      "created_at"=>"Thu, 19 May 2011 11:27:50 +0000",
+      "profile_image_url"=>"http://a1.twimg.com/profile_images/1159027114/jpnewf_normal.JPG", "from_user_id_str"=>"119432610",
+      "id_str"=>"71175222723739649",
+      "from_user"=>"JalapathyG",
+      "text"=>"Sharanya ante mee hero Komaram Puli lo talliga natincharu kada..aavida..senior actress",
+      "to_user_id"=>59500008,
+      "metadata"=>{"result_type"=>"recent"},
+      "id"=>71175222723739649,
+      "geo"=>nil,
+      "to_user"=>"chintugupta",
+      "from_user_id"=>119432610,
+      "iso_language_code"=>"eo",
+      "source"=>"&lt;a href=&quot;http://twitter.com/&quot;&gt;web&lt;/a&gt;",
+      "to_user_id_str"=>"59500008"
+    }
+
+    @tweet = Tweet.from_hashie!(hash)
   end
 
-  its(:created_on_twitter) { should equal_for_date("01/02/2009") }
-  its(:twitter_id) { should eql(234) }
+  its(:created_on_twitter) { should equal_for_date("05/19/2011") }
+  its(:twitter_id) { should eql(71175222723739649) }
+  its(:from_user) { should eql("JalapathyG") }
+  its(:text) { should eql("Sharanya ante mee hero Komaram Puli lo talliga natincharu kada..aavida..senior actress") }
 end

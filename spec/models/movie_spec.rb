@@ -8,6 +8,9 @@ describe Movie, "#validations" do
   it { should validate_presence_of(:cast) }
 end
 
+describe Movie, "#formated_score" do
+end
+
 describe Movie, "#scopes" do
   before(:all) do
     @movie1 = Factory(:movie, :released_on => "5/12/2011", :disabled => true)

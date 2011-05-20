@@ -1,5 +1,6 @@
 Factory.define :tweet do |p|
   p.association :movie
+  p.association :keyword
   p.sequence(:twitter_id) { |n| n }
   p.sequence(:text) { |n| "#{Faker::Lorem.sentence} #{n}" }
 end
