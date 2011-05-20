@@ -31,6 +31,7 @@ class Keyword < ActiveRecord::Base
       output = prepare_params_for(counter).fetch
 
       create_tweets if output.results
+
       break unless search_instance.next_page?
 
       counter += 1
@@ -41,13 +42,20 @@ class Keyword < ActiveRecord::Base
 
   def create_tweets
     transaction do
-      valid_tweets.each { | tweet | movie.tweets << tweet }.tap do |tweets|
-        tweets.size.nonzero? && update_attribute(:since_id, tweets.last.twitter_id)
+
+      to_tweets.each do | tweet |
+        tweet.movie = movie
+
+        if tweet.save
+          self.since_id = tweet.twitter_id
+        end
       end
+
+      changed? && save
     end
   end
 
-  def valid_tweets
-    search_instance.map { | hashie | Tweet.from_hashie!(hashie) }.select(&:valid?)
+  def to_tweets
+    search_instance.map { | hashie | Tweet.from_hashie!(hashie) }
   end
 end

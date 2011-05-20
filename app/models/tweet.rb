@@ -15,6 +15,8 @@ class Tweet < ActiveRecord::Base
   cattr_reader :per_page
 
   @@per_page = 10
+  CATEGORIES = %w(positive negative mixed)
+
 
   scope :spotlight, where(:featured => true)
 
@@ -22,20 +24,12 @@ class Tweet < ActiveRecord::Base
 
   after_create  :external!, :if => :url?
 
-  scope :assesed, where(:category => %w(positive negative mixed))
+  scope :assesed, where(:category => CATEGORIES)
 
   validates :twitter_id, :presence => true, :retweet => true, :uniqueness => { :scope => :movie_id }
 
   validates :text, :presence => true, :retweet => true, :uniqueness => { :scope => [:from_user, :movie_id] }
 
-  def self.from_hashie!(hashie)
-    options = {
-      :twitter_id => hashie.delete("id"),
-      :created_on_twitter => hashie.delete("created_at")
-    }.merge(only_related_attributes(hashie))
-
-    new(options)
-  end
 
   def url
     ActionView::Helpers::TextHelper::AUTO_LINK_RE.match(text)[0]
@@ -45,23 +39,35 @@ class Tweet < ActiveRecord::Base
     ActionView::Helpers::TextHelper::AUTO_LINK_RE.match(text).present?
   end
 
+  def assesed?
+    !fresh?
+  end
+
   def not_featured?
     !featured?
   end
 
   def twitter_url
-    "http://twitter.com/#{self.from_user}/statuses/#{self.twitter_id}"
+    "http://twitter.com/#{from_user}/statuses/#{twitter_id}"
   end
 
   def mood
     "#{category}.png"
   end
 
-  def self.only_related_attributes(hashie)
-    hashie.to_hash.with_indifferent_access.slice(*columns.map(&:name))
-  end
-
   class << self
+
+    def only_related_attributes(hashie)
+      hashie.to_hash.with_indifferent_access.slice(*columns.map(&:name))
+    end
+
+    def from_hashie!(h)
+      h.stringify_keys!
+      options = { :twitter_id => h.delete("id"), :created_on_twitter => h.delete("created_at") }
+
+      new(options.merge(only_related_attributes(h)))
+    end
+
     def create_bool_methods(*method_names)
       method_names.each do | method |
         class_eval <<-method_body
