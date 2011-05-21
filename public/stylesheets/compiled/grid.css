@@ -896,6 +896,16 @@ p.tweet-box {
   background: url("/images/used/twitter_logo_right.png") no-repeat scroll 20px 9px transparent;
 }
 
+/* line 113, ../../../app/assets/stylesheets/partials/_show.scss */
+#search-area {
+  margin-top: 20px;
+}
+
+/* line 116, ../../../app/assets/stylesheets/partials/_show.scss */
+.tweet-box {
+  border: 2px dotted gray;
+}
+
 /* line 12, ../../../app/assets/stylesheets/grid.scss */
 .container_12 {
   margin-left: auto;

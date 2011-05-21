@@ -1,14 +1,4 @@
 class KeywordsController < ApplicationController
-  # GET /keywords/new.xml
-  def new
-    @keyword = Keyword.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @keyword }
-    end
-  end
-
   # POST /keywords
   # POST /keywords.xml
   def create

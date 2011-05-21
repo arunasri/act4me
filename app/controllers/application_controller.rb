@@ -1,10 +1,10 @@
 class ApplicationController < ActionController::Base
 
+  protect_from_forgery
+
   has_mobile_fu
 
   rescue_from RuntimeError, :with => :search_error
-
-  protect_from_forgery
 
   USERNAME = 'admin'
 
@@ -34,7 +34,7 @@ class ApplicationController < ActionController::Base
 
   def authenticate
     authenticate_or_request_with_http_basic do |username, password|
-      username == USERNAME &&  Digest::SHA1.hexdigest(password) == PASSWORD && session[:admin] = true
+      username == USERNAME &&  Digest::SHA1.hexdigest(password) == PASSWORD && admin!
     end
   end
 
@@ -42,5 +42,9 @@ class ApplicationController < ActionController::Base
     def admin?
       session[:admin]
     end
+  end
+
+  def admin!
+    session[:admin] = true
   end
 end

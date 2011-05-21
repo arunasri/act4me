@@ -1,0 +1,33 @@
+<%= form_for search, :url => url_for(params.slice(:action,:controller,:id)) do |f| %>
+  <div class="grid_3 prefix_4 alpha">
+    <%= f.text_field :from_user_contains, :size => 15 %>
+  </div>
+
+  <div class="grid_12">
+    <div class="grid_12">
+      <%= f.text_field :text_contains %>
+    </div>
+    <div class="grid_12">
+      <% %w(positive negative mixed fresh terminate).each do | cat | %>
+        <%= radio_button_tag "admin_category", cat , false, :class => 'category_all'%> 
+        <%= label_tag cat %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="grid_2">
+    <input type="checkbox" id="feature_all">
+  </div>
+
+  <div class="grid_2 omega">
+    <input type="checkbox" id="destroy_all">
+  </div>
+
+  <div class="clear"></div>
+
+  <div class="grid_24">
+    <%= f.submit %>
+  </div>
+
+  <div class="clear"></div>
+<% end %>

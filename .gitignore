@@ -7,4 +7,6 @@ config/database.yml
 tags
 public/system
 public/uploads
+public/movies
+public/index.html
 Guardfile

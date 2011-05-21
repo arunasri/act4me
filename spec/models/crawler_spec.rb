@@ -1,7 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe Crawler do
-
   context "when since id absent" do
     subject { @crawler.search.query }
     before(:each) do
@@ -60,18 +59,6 @@ describe Crawler do
     before(:each) do
       @keyword = Factory(:keyword, :name => "titanic", :since_id => "1234")
       @crawler = Crawler.new(@keyword)
-    end
-
-    context "#reset" do
-      subject { @crawler }
-      before(:each) do
-        @crawler.instance_eval { @page = 10 }
-        @crawler.reset!
-      end
-      its(:page) { should eql(1) }
-    end
-
-    context "create tweets" do
     end
 
     context "#next" do

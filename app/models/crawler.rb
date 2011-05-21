@@ -24,12 +24,8 @@ class Crawler
     since_id ? search.since(since_id) : search.since_date(movie.released_on.to_s)
   end
 
-  def reset!
-    @page = 1
-  end
-
   def perform_search
-    reset!
+    @page = 1
 
     while true
 

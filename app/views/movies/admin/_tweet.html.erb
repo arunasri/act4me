@@ -1,0 +1,30 @@
+<div class="tweet-box">
+  <div class="grid_4 alpha">
+    <%= tweet.object.created_on_twitter.to_date.strftime("%B %d, %Y") %>
+  </div>
+
+  <div class="grid_3">
+    <%= tweet.object.from_user %>
+  </div>
+
+  <div class="grid_12">
+    <div class="grid_12">
+      <%= auto_link tweet.object.text, :urls, :target => :_blank %>
+    </div>
+    <div class="grid_12">
+      <% %w(positive negative mixed fresh terminate).each do | cat | %>
+        <%= tweet.radio_button :category, cat %>
+        <%= tweet.label :category, cat.camelize %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="grid_2">
+    <%= tweet.check_box :featured, {}, true,false %>
+  </div>
+
+  <div class="grid_2 omega">
+    <%= tweet.check_box :_destroy %>
+  </div>
+  <div class="clear"></div>
+</div>

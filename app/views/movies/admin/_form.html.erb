@@ -1,0 +1,9 @@
+<%= form_for(movie) do |f| %>
+  <%= f.fields_for :tweets, tweets do | tweet | %>
+    <%= render :partial => "movies/admin/tweet", :locals => { :tweet => tweet } %>
+  <% end %>
+
+  <div class="grid_4">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -4,9 +4,10 @@ class MoviesController < ApplicationController
 
   before_filter :authenticate, :except => [:autocomplete, :index, :show, :positive, :negative, :mixed, :closest]
 
-  #caches_page   :index, :show
-  #cache_sweeper :movie_sweeper, :only => [:update, :create]
-  #caches_action :show, :if => proc { params[:page].blank? }
+  caches_page   :index, :show
+  cache_sweeper :movie_sweeper, :only => [:update, :create]
+  caches_action :show, :if => proc { params[:page].blank? }
+
   def closest
     @movie = Movie.find(params[:id].to_i)
     res = Geokit::Geocoders::GoogleGeocoder.reverse_geocode(params.values_at(:lat,:lng))
@@ -50,15 +51,17 @@ class MoviesController < ApplicationController
     @movie = Movie.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html { render :layout => 'admin' }
       format.xml  { render :xml => @movie }
     end
+
   end
 
   # GET /movies/1/edit
   def edit
     @movie = Movie.find(params[:id].to_i)
     @tweets = @movie.tweets.fresh.paginate(:page => params[:page])
+    render :layout => 'admin'
   end
 
   # GET /movies/1/edit
@@ -82,7 +85,7 @@ class MoviesController < ApplicationController
       @movie  = Movie.find(params[:id].to_i)
       @search = @movie.tweets.send(method).search(params[:search])
       @tweets = @search.paginate(:page => params[:page])
-      render :action => :admin
+      render :action => :admin, :layout => 'admin'
     end
   end
 
@@ -114,7 +117,7 @@ class MoviesController < ApplicationController
         format.html { redirect_to(@movie, :notice => 'Movie was successfully updated.') }
         format.xml  { head :ok }
       else
-        format.html { render :action => "edit" }
+        format.html { render :action => "edit", :layout => 'admin' }
         format.xml  { render :xml => @movie.errors, :status => :unprocessable_entity }
       end
     end
