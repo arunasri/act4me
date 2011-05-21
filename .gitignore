@@ -5,6 +5,7 @@ config/database.yml
 .rvmrc
 .autotest
 tags
+Gemfile.lock
 public/system
 public/uploads
 public/movies
