@@ -1,9 +1,17 @@
+every 1.days do
+  rake tweets:daily
+end
+
+every 12.hours do
+  rake tweets:hourly
+end
+
 every 1.hours do
- rake "update_videos"
+  rake tweets:minutely
 end
 
 every 20.hours do
-  rake "handy:db:dump2s3"
+  #rake "handy:db:dump2s3"
 end
 
 

@@ -24,7 +24,7 @@ class MoviesController < ApplicationController
   # GET /movies
   # GET /movies.xml
   def index
-    @movies = Movie.active
+    @movies = Movie.order(:released_on).limit(12)
 
     respond_to do |format|
       format.mobile
