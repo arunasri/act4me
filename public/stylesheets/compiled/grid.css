@@ -906,6 +906,11 @@ p.tweet-box {
   border: 2px dotted gray;
 }
 
+/* line 120, ../../../app/assets/stylesheets/partials/_show.scss */
+.fblike {
+  float: right;
+}
+
 /* line 12, ../../../app/assets/stylesheets/grid.scss */
 .container_12 {
   margin-left: auto;
