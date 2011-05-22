@@ -20,6 +20,11 @@
   <%= @movie.name %>
 <% end %>
 
+<% content_for :facebook_like do %>
+  <fb:like href="<%= movie_url(@movie) %>" layout="button_count" show_faces="false" width="240" height="40" action="like" colorscheme="light">
+  </fb:like>
+<% end %>
+
 <% content_for :color do %>
   red
 <% end %>

@@ -18,10 +18,7 @@
       <%= render :partial => 'quote', :collection => movie.tweets.assesed %> 
     </ul>
   </div>
-
   <div class="grid_14">
-    <fb:like href="<%= movie_url(movie) %>" layout="button_count" show_faces="false" width="240" height="40" action="like" colorscheme="light">
-    </fb:like>
     <% link_to 'Trailer', movie, :class => 'button' %>
     <% link_to 'Songs', movie, :class => 'button' %>
   </div>
