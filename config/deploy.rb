@@ -28,6 +28,12 @@ namespace :app do
   end
 end
 
+#config/deploy.rb
+task :after_symlink do
+  run "ln -nfs #{shared_path}/images/uploads #{release_path}/public/images/uploads"
+end
+
+
 set :whenever_command, "bundle exec whenever"
 require "whenever/capistrano"
 require "handy/capistrano/remote_tasks"
