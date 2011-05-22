@@ -20,7 +20,7 @@ set (:deploy_to) { "/home/#{user}/apps/#{application}" }
 set :copy_remote_dir, "/home/#{user}/tmp"
 
 after "deploy:update_code", "app:copy_config_files"
-after "deploy:symlink", "whenever:update_crontab"
+
 namespace :app do
   desc "copy the app_config_production.yml file"
   task :copy_config_files,:roles => :app do
