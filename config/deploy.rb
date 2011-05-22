@@ -28,7 +28,7 @@ namespace :app do
   end
 end
 
-set :whenever_command, "bundle exec whenever"
+set :whenever_command, "bundle exec whenever --update-crontab #{application}"
 require "whenever/capistrano"
 
 require "handy/capistrano/remote_tasks"
