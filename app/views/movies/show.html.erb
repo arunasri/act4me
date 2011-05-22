@@ -1,3 +1,9 @@
+<% content_for :facebook_meta do %>
+  <meta property="og:title" content="<%= @movie.name %>"/>
+  <meta property="og:url" content="<%= movie_path(@movie) %>"/>
+  <meta property="og:image" content="<%= @movie.vertical.thumb.url %>"/>
+<% end %>
+
 <% content_for :title do %>
   <%= "#{@movie.name} Review" %> 
 <% end %>
