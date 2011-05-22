@@ -7,23 +7,31 @@
     </title>
     <meta name="description" content="<%= content_for :description %>" />
     <meta name="keywords" content="<%= content_for :keywords %>" />
-    <script src="http://connect.facebook.net/en_US/all.js"></script>
     <%= content_for :facebook_meta %>
     <%= hoptoad_javascript_notifier %>
     <%= javascript_include_tag    "vendor/jquery.min", 
-                                  "vendor/quote.rotator", 
-                                  "vendor/scroll", 
-                                  "vendor/rails", 
-                                  "application" 
-                                %>
+      "vendor/quote.rotator", 
+      "vendor/scroll", 
+      "vendor/rails", 
+      "application" 
+    %>
     <%= stylesheet_link_tag "compiled/grid", "compiled/text" %>
     <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Play:regular,bold&subset=greek,latin' %>
     <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=greek,latin' %>
   </head>
   <body class="show">
-    <div id="fb-root"></div>
     <%= render :partial => "/shared/header" %>
     <%= yield %>
     <%= render :partial => "/shared/google" %>
+    <div id="fb-root"></div>
+    <script src="http://connect.facebook.net/en_US/all.js"></script>
+    <script>
+      FB.init({
+        appId  : '162180660488445',
+        status : true, // check login status
+        cookie : true, // enable cookies to allow the server to access the session
+        xfbml  : true  // parse XFBML
+      });
+    </script>
   </body>
 </html>

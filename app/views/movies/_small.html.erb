@@ -9,8 +9,5 @@
       <div class="votes"><%= movie.tweets.assesed.count %> tweets</div>
     </div>
     <%= link_to movie.name, movie, :class => 'title' %>
-
-    <fb:like href="<%= movie_url(movie) %>" send="true" show_faces="false">
-    </fb:like>
   </div>
 </div>

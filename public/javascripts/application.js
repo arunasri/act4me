@@ -10,11 +10,4 @@ $(document).ready(function() {
 		loadingImg: "/images/used/ajax-loading.gif",
 		donetext: "We've hit the end of the reviews."
 	});
-
-	FB.init({
-		appId: '162180660488445',
-		status: true,
-		cookie: true,
-		xfbml: true
-	});
 });
