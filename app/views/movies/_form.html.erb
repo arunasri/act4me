@@ -18,13 +18,13 @@
         <%= f.label :name %><br />
         <%= f.text_field :name %>
       </div>
-      <%= image_tag(@movie.vertical.url) if @movie.vertical? %>
+      <%= image_tag(@movie.vertical.thumb.url) if @movie.vertical? %>
       <div class="field">
         <%= f.label :vertical %><br />
         <%= f.file_field :vertical %>
       </div>
 
-      <%= image_tag(@movie.horizontal.url) if @movie.horizontal? %>
+      <%= image_tag(@movie.horizontal.thumb.url) if @movie.horizontal? %>
       <div class="field">
         <%= f.label :horizontal %><br />
         <%= f.file_field :horizontal %>
