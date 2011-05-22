@@ -7,10 +7,10 @@
     <span class="percentage"><%= movie.computed_score %></span>
     <span class="percentage-sign">%</span>
     <span class="voters"><%= movie.tweets.assesed.count %> tweets</span>
-    <span class="fblike">
-      <fb:like href="<%= movie_url(movie) %>" layout="button_count" show_faces="false" width="240" height="40" action="like" colorscheme="light">
+    <div class="mbm">
+      <fb:like href="<%= movie_url(movie) %>" send="true" show_faces="false">
       </fb:like>
-    </span>
+    </div>
   </div>
   <div class="details grid_14">
     <p><span>Released on </span> <%= movie.released_on.strftime("%d %B, %Y") %></p>
