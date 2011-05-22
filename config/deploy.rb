@@ -29,9 +29,7 @@ namespace :app do
 end
 
 set :whenever_command, "bundle exec whenever"
-
 require "whenever/capistrano"
-
 require "handy/capistrano/remote_tasks"
 require "handy/capistrano/restart"
 require "handy/capistrano/restore_local"
