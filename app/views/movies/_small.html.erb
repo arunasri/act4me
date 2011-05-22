@@ -8,8 +8,8 @@
       <div class="percent"><span class="number"><%= movie.computed_score %></span><span class="sign">%</span></div>
       <div class="votes"><%= movie.tweets.assesed.count %> tweets</div>
     </div>
-
     <%= link_to movie.name, movie, :class => 'title' %>
+
     <fb:like href="<%= movie_url(movie) %>" layout="button_count" show_faces="false" width="240" height="40" action="like" colorscheme="light">
     </fb:like>
   </div>
