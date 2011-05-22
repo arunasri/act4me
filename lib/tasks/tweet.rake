@@ -22,17 +22,17 @@ namespace :tweets do
   end
 
   desc "Search twitter minutely"
-  task :minutely => :environment do
+  task :this_week_releases => :environment do
     call_twitter Movie.this_weekend
   end
 
   desc "Search twitter hourly"
-  task :hourly => :environment do
+  task :last_week_releases => :environment do
     call_twitter Movie.last_weekend
   end
 
   desc "Search twitter daily"
-  task :daily => :environment do
+  task :month_releases => :environment do
     call_twitter Movie.this_month
   end
 

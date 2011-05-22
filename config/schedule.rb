@@ -1,3 +1,16 @@
+every 7.days do
+  runner "tweets:month_releases"
+end
+
+every 1.day, :at => '4:30 am' do
+  runner "tweets:last_week_releases"
+end
+
+every :hour do
+  runner "tweets:this_week_releases"
+end
+
+
 every 20.hours do
   #rake "handy:db:dump2s3"
 end
