@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/">
   <head>
+    <%= content_for :facebook_meta %>
     <meta name="google-site-verification" content="RXjWilEYk0eC_6ulYSV_AaFVSQe8nHI6Zw4_W9dVR5I" />
     <title><%= content_for :title %></title>
-    <%= content_for :facebook_meta %>
     <%= hoptoad_javascript_notifier %>
     <%= javascript_include_tag    "vendor/jquery.min", 
       "vendor/quote.rotator", 
