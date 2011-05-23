@@ -3,7 +3,7 @@
     <h1><%= @movie.name %></h1>
   <% end %>
 
-  <%= image_tag(@movie.cover_image.thumb("300x225").url)  %>
+  <%= image_tag(@movie.horizontal.mobile.url)  %>
 
   <ul class="showtimes" data-role="listview" data-inset="true" data-theme="c" data-url='<%= closest_movie_path(@movie) %>'>
   <li data-role="list-divider">Show times</li>

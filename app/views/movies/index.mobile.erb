@@ -3,7 +3,6 @@
     <h1>Review Umpire</h1>
   <% end %>
 
-
   <ul data-role="listview" data-filter="true">
   <% Movie.group(:released_on).select(:released_on).each do | date | %>
     <li data-role="list-divider"><%= date.released_on.strftime("%d %B, %Y") %></li>

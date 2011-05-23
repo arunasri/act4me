@@ -25,6 +25,7 @@ namespace :app do
   desc "copy the app_config_production.yml file"
   task :copy_config_files,:roles => :app do
     run "cp -fv #{deploy_to}/shared/config/database.yml #{release_path}/config"
+    Movie.all.each { |t|  t.recreate_versions! }
   end
 end
 
