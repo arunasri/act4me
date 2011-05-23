@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
   <head>
-<meta property="og:title" content="Pirates of the Caribbean: On Stranger Tides" />
-<meta property="og:type" content="movie" />
-<meta property="og:image" content="http://content6.flixster.com/movie/11/15/67/11156760_pro.jpg" />
-<meta property="og:url" content="http://www.rottentomatoes.com/m/pirates_of_the_caribbean_on_stranger_tides/" />
-<meta property="og:site_name" content="Reviewumpire">
+    <meta property="og:title" content="Pirates of the Caribbean: On Stranger Tides" />
+    <meta property="og:type" content="movie" />
+    <meta property="og:image" content="http://content6.flixster.com/movie/11/15/67/11156760_pro.jpg" />
+    <meta property="og:url" content="http://www.rottentomatoes.com/m/pirates_of_the_caribbean_on_stranger_tides/" />
+    <meta property="og:site_name" content="Reviewumpire">
     <meta property="fb:app_id" content="162180660488445" />
     <meta property="fb:admins" content="57728908711" />
     <meta name="google-site-verification" content="RXjWilEYk0eC_6ulYSV_AaFVSQe8nHI6Zw4_W9dVR5I" />
@@ -18,11 +18,23 @@
     <%= stylesheet_link_tag "compiled/grid", "compiled/text" %>
     <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Play:regular,bold&subset=greek,latin' %>
     <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=greek,latin' %>
-    <script src="http://connect.facebook.net/en_US/all.js"></script>
   </head>
   <body class="show">
     <%= render :partial => "/shared/header" %>
     <%= yield %>
     <%= render :partial => "/shared/google" %>
+    <div id="fb-root"></div>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({appId: 'your app id', status: true, cookie: true,
+          xfbml: true});
+      };
+      (function() {
+        var e = document.createElement('script'); e.async = true;
+        e.src = document.location.protocol +
+        '//connect.facebook.net/en_US/all.js';
+        document.getElementById('fb-root').appendChild(e);
+      }());
+    </script>
   </body>
 </html>
