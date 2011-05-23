@@ -1,5 +1,6 @@
 Tweet2review::Application.routes.draw do
 
+  match '/movies/:page' => 'movies#index', :constraints => { :page => /\d+/ }
   match '/movies/:id/:action/:page' => 'movies'
 
   resources :movies do

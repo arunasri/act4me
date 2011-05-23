@@ -807,10 +807,13 @@ ul#quotes li cite {
 
 /* line 28, ../../../app/assets/stylesheets/partials/_show.scss */
 #movies-page {
-  height: 800px;
   background-color: #E8E8DC;
 }
 
+/* line 32, ../../../app/assets/stylesheets/partials/_show.scss */
+#movies {
+  overflow: hidden;
+}
 /* line 34, ../../../app/assets/stylesheets/partials/_show.scss */
 #movies .rating-pod {
   background-color: #333333;

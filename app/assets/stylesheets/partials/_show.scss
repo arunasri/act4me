@@ -26,11 +26,11 @@ $bubble-image: "/images/used/bubble1.png";
 
 
 #movies-page{
-    height: 800px;
     background-color: #E8E8DC;
 }
 
 #movies{
+overflow: hidden;
     .rating-pod {
         background-color: #333333;
         border-radius: 0 0 6px 6px;

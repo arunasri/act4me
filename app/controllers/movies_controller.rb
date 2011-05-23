@@ -6,7 +6,7 @@ class MoviesController < ApplicationController
 
   caches_page   :index, :show
   cache_sweeper :movie_sweeper, :only => [:update, :create]
-  caches_action :show, :if => proc { params[:page].blank? }
+  caches_action :show, :index, :if => proc { params[:page].blank? }
 
   def closest
     @movie = Movie.find(params[:id].to_i)
@@ -24,8 +24,7 @@ class MoviesController < ApplicationController
   # GET /movies
   # GET /movies.xml
   def index
-    @movies = Movie.order(:released_on).limit(12)
-
+    @movies = Movie.order(:released_on).paginate(:page => params[:page], :per_page => 12)
     respond_to do |format|
       format.mobile
       format.html # index.html.erb

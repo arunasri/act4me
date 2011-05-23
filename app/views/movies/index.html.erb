@@ -15,9 +15,19 @@
 <% end %>
 
 <div id="movies-page">
-  <div class="container_24">
-    <div id="movies">
-      <%= render :partial => "small", :collection => @movies, :as => :movie %>
-    </div>
+  <div class="container_24" id="movies">
+    <% @movies.in_groups_of(6).each do | tg | %>
+      <% tg.compact! %>
+      <div class="movies-list">
+        <%= render :partial => "/movies/small", :collection => tg, :as => :movie %>
+        <div class="clear"></div>
+      </div>
+    <% end %>
   </div>
+
+  <% if @movies.next_page %>
+    <div id="next">
+      <%= link_to 'next', url_for(params.merge(:page => @movies.next_page)) %>
+    </div>
+  <% end %>
 </div>
