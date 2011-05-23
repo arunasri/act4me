@@ -1,7 +1,7 @@
 <% content_for :title do %>
   <%= @movie.name %>
 <% end %>
-<%= image_tag(@movie.cover_image.thumb("300x225").url)  %>
+<%= image_tag(@movie.horizontal.mobile.url)  %>
 
 <ul data-role="listview" data-inset="true"> 
   <% @theaters.each do | theater | %>
