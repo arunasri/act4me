@@ -12,6 +12,7 @@ namespace :tweets do
       movies.each do | movie |
         twt_cnt = Tweet.count
         movie.keywords.each(&:perform_search)
+        req_cnt += (Tweet.count - twt_cnt)
         messages << "#{movie.name} =============>   #{Tweet.count - twt_cnt}".tap { |s| print(s) }
       end
     rescue
