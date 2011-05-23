@@ -9,11 +9,7 @@ class Movie < ActiveRecord::Base
 
   has_many :tweets, :dependent => :destroy, :inverse_of => :movie
 
-  has_many :keywords, :dependent => :destroy do
-    def query_twitter
-      collect(&:perform_search).reduce(0, :+)
-    end
-  end
+  has_many :keywords, :dependent => :destroy
 
   default_scope :order => "movies.released_on desc"
 
