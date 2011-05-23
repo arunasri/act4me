@@ -2,11 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
   <head>
     <meta name="google-site-verification" content="RXjWilEYk0eC_6ulYSV_AaFVSQe8nHI6Zw4_W9dVR5I" />
-    <title>
-      <%= content_for :title %>
-    </title>
-    <meta name="description" content="<%= content_for :description %>" />
-    <meta name="keywords" content="<%= content_for :keywords %>" />
+    <title><%= content_for :title %></title>
     <%= content_for :facebook_meta %>
     <%= hoptoad_javascript_notifier %>
     <%= javascript_include_tag    "vendor/jquery.min", 
