@@ -1,13 +1,4 @@
 
-<% content_for :facebook_meta do %>
-<meta property="og:title" content="Pirates of the Caribbean: On Stranger Tides" />
-	        <meta property="og:type" content="movie" />
-
-	        <meta property="og:image" content="http://content6.flixster.com/movie/11/15/67/11156760_pro.jpg" />
-	        <meta property="og:url" content="http://www.rottentomatoes.com/m/pirates_of_the_caribbean_on_stranger_tides/" />
-			<meta property="og:site_name" content="Reviewumpire">
-<% end %>
-
 <% cache(:action => 'show', :controller => 'movies', :id => @movie.id, :content_type => 'html') do %>
 
   <% content_for :title do %>
