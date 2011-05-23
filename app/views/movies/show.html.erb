@@ -1,48 +1,50 @@
-<% content_for :facebook_meta do %>
-  <meta property="og:title" content="<%= @movie.name %>"/>
-  <meta property="og:url" content="<%= movie_url(@movie) %>"/>
-  <meta property="og:type" content="movie" />
-  <meta property="og:site_name" content="reviewumpire"/>
-  <meta property="og:image" content="<%= request.protocol + request.host_with_port + @movie.vertical.thumb.url %>"/>
-  <meta property="og:description" content="
-  <%= @movie.name %> reviewumpire score is <%=  @movie.formatted_score  %>.
-  <%= @movie.tweets.assesed.count %> tweets used to compute this score.
-  "/>
-<% end %>
+<% cache(:action => 'show', :controller => 'movies', :id => @movie.id, :content_type => 'html') do %>
+  <% content_for :facebook_meta do %>
+    <meta property="og:title" content="<%= @movie.name %>"/>
+    <meta property="og:url" content="<%= movie_url(@movie) %>"/>
+    <meta property="og:type" content="movie" />
+    <meta property="og:site_name" content="reviewumpire"/>
+    <meta property="og:image" content="<%= request.protocol + request.host_with_port + @movie.vertical.thumb.url %>"/>
+    <meta property="og:description" content="
+    <%= @movie.name %> reviewumpire score is <%=  @movie.formatted_score  %>.
+    <%= @movie.tweets.assesed.count %> tweets used to compute this score.
+    "/>
+  <% end %>
 
-<% content_for :title do %>
-  <%= "#{@movie.name} Review" %> 
-<% end %>
+  <% content_for :title do %>
+    <%= "#{@movie.name} Review" %> 
+  <% end %>
 
-<% content_for :keywords do %>
-  <%= "#{@movie.name} movie reviews, #{@movie.name} tweets, #{@movie.name} talk, #{@movie.name} positive talk, #{@movie.name} negative talk" %> 
-<% end %>
+  <% content_for :keywords do %>
+    <%= "#{@movie.name} movie reviews, #{@movie.name} tweets, #{@movie.name} talk, #{@movie.name} positive talk, #{@movie.name} negative talk" %> 
+  <% end %>
 
-<% content_for :subheader do %>
-  <%= @movie.name %>
-<% end %>
-
-
-<% content_for :color do %>
-  red
-<% end %>
+  <% content_for :subheader do %>
+    <%= @movie.name %>
+  <% end %>
 
 
-<div id="poster-area">
-  <div class="container_24">
-    <%= render @movie %>
+  <% content_for :color do %>
+    red
+  <% end %>
+
+
+  <div id="poster-area">
+    <div class="container_24">
+      <%= render @movie %>
+    </div>
   </div>
-</div>
 
-<div class="sub-header-wrapper <%= content_for :color %>">
-  <div class="content header">
-    <%= image_tag "used/twitter_logo_right.png" %>
-    <h1> </h1>
+  <div class="sub-header-wrapper <%= content_for :color %>">
+    <div class="content header">
+      <%= image_tag "used/twitter_logo_right.png" %>
+      <h1> </h1>
+    </div>
   </div>
-</div>
 
-<div id="twitter-area">
-  <div class="container_24">
-    <%= render :partial => "/tweets/tweets", :locals => { :tweets => @tweets } %>
+  <div id="twitter-area">
+    <div class="container_24">
+      <%= render :partial => "/tweets/tweets", :locals => { :tweets => @tweets } %>
+    </div>
   </div>
-</div>
+<% end %>

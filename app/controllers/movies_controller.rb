@@ -4,9 +4,7 @@ class MoviesController < ApplicationController
 
   before_filter :authenticate, :except => [:autocomplete, :index, :show, :positive, :negative, :mixed, :closest]
 
-  caches_page   :index, :show
-  cache_sweeper :movie_sweeper, :only => [:update, :create]
-  caches_action :show, :index, :if => proc { params[:page].blank? }
+  cache_sweeper :movie_sweeper, :only => [ :update, :create ]
 
   def closest
     @movie = Movie.find(params[:id].to_i)

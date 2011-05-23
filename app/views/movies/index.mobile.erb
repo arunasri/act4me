@@ -1,11 +1,13 @@
-<% content_for :title do %>
-  <h1>Review Umpire</h1>
-<% end %>
+<% cache(:action => 'index', :controller => 'movies', :content_type => 'mobile') do %>
+  <% content_for :title do %>
+    <h1>Review Umpire</h1>
+  <% end %>
 
 
-<ul data-role="listview" data-filter="true">
+  <ul data-role="listview" data-filter="true">
   <% Movie.group(:released_on).select(:released_on).each do | date | %>
     <li data-role="list-divider"><%= date.released_on.strftime("%d %B, %Y") %></li>
     <%= render Movie.where(:released_on => date.released_on) %>
   <% end %>
-</ul>
+  </ul>
+<% end %>

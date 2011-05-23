@@ -19,20 +19,6 @@ class MovieSweeper < ActionController::Caching::Sweeper
   private
 
   def expire_cache_for(movie)
-    cache_dir = ActionController::Base.page_cache_directory
-
-    if File.exists?(cache_dir+"/movies/#{movie.to_param}.html")
-      FileUtils.remove_file(cache_dir+"/movies/#{movie.to_param}.html")
-    end
-
-    if File.exists?(cache_dir+"/index.html")
-      FileUtils.remove_file(cache_dir+"/index.html")
-    end
-
-    if File.directory?(cache_dir+"/movies/#{movie.to_param}/")
-      FileUtils.rm_r(Dir.glob(cache_dir+"/movies/#{movie.to_param}/"))
-    end
-
-    expire_action(:controller => 'movies', :action => 'show', :id => movie.to_param)
+    expire_fragment(/movie/)
   end
 end

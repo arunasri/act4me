@@ -1,44 +1,46 @@
-<% content_for :title do %>
-  <h1><%= @movie.name %></h1>
-<% end %>
+<% cache(:action => 'show', :id => @movie.id, :controller => 'movies', :content_type => 'mobile') do %>
+  <% content_for :title do %>
+    <h1><%= @movie.name %></h1>
+  <% end %>
 
-<%= image_tag(@movie.cover_image.thumb("300x225").url)  %>
+  <%= image_tag(@movie.cover_image.thumb("300x225").url)  %>
 
-<ul class="showtimes" data-role="listview" data-inset="true" data-theme="c" data-url='<%= closest_movie_path(@movie) %>'>
+  <ul class="showtimes" data-role="listview" data-inset="true" data-theme="c" data-url='<%= closest_movie_path(@movie) %>'>
   <li data-role="list-divider">Show times</li>
-</ul>
+  </ul>
 
-<table>
+  <table>
   <tbody>
-    <% @tweets.each do | tweet | %>
-      <tr>
-      <td> <%= image_tag tweet.profile_image_url, :height => 48, :width => 48, :class => "ui-thumb" %> </td>
-        <td><%= tweet.text %></td>
+  <% @tweets.each do | tweet | %>
+    <tr>
+    <td> <%= image_tag tweet.profile_image_url, :height => 48, :width => 48, :class => "ui-thumb" %> </td>
+    <td><%= tweet.text %></td>
     </tr>
-    <% end %>
+  <% end %>
   </tbody>
-</table>
+  </table>
 
 
 
-<% content_for :menu do %>
-<div data-role="navbar" data-theme="e" class="feelings">
-  <ul> 
+  <% content_for :menu do %>
+    <div data-role="navbar" data-theme="e" class="feelings">
+    <ul> 
     <li>
-      <%= footer_link "Love", { 
+    <%= footer_link "Love", { 
       :controller => "movies", :action => "positive" , :id => @movie.id 
-      }, { :id => "love"} %>
+    }, { :id => "love"} %>
     </li>
     <li>
-      <%= footer_link "Hate", { 
+    <%= footer_link "Hate", { 
       :controller => "movies", :action => "negative" , :id => @movie.id 
-      }, { :id => "hate"} %>
+    }, { :id => "hate"} %>
     </li>
     <li>
-      <%= footer_link "Mixed", { 
+    <%= footer_link "Mixed", { 
       :controller => "movies", :action => "mixed" , :id => @movie.id 
-      }, { :id => "mixed"} %>
+    }, { :id => "mixed"} %>
     </li>
-  </ul> 
-</div>
+    </ul> 
+    </div>
+  <% end %>
 <% end %>
