@@ -1,10 +1,13 @@
 <% content_for :facebook_meta do %>
   <meta property="og:title" content="<%= @movie.name %>"/>
-  <meta property="og:url" content="<%= movie_path(@movie) %>"/>
+  <meta property="og:url" content="<%= movie_url(@movie) %>"/>
   <meta property="og:type" content="movie" />
   <meta property="og:site_name" content="reviewumpire"/>
   <meta property="og:image" content="<%= request.protocol + request.host_with_port + @movie.vertical.thumb.url %>"/>
-  <meta property="og:description" content="<%=  @movie.formatted_score  %> twitter users liked it. <%= @movie.tweets.assesed.count %> tweeted about this movie."/>
+  <meta property="og:description" content="
+  <%= @movie.name %> reviewumpire score is <%=  @movie.formatted_score  %>.
+  <%= @movie.tweets.assesed.count %> tweets used to compute this score.
+  "/>
 <% end %>
 
 <% content_for :title do %>
