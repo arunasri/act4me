@@ -1,38 +1,35 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/html401-rdfa-1.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:og="http://ogp.me/ns#"
-      xmlns:fb="http://www.facebook.com/2008/fbml">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://developers.facebook.com/schema/">
   <head>
-    <title><%= content_for :title %></title>
-    <%= content_for :facebookmeta %>
-    <meta name="google-site-verification" content="RXjWilEYk0eC_6ulYSV_AaFVSQe8nHI6Zw4_W9dVR5I" />
-    <%= javascript_include_tag    "vendor/jquery.min", 
-      "vendor/quote.rotator", 
-      "vendor/scroll", 
-      "vendor/rails", 
-      "application" 
-    %>
-    <%= stylesheet_link_tag "compiled/grid", "compiled/text" %>
-    <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Play:regular,bold&subset=greek,latin' %>
-    <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=greek,latin' %>
-    <%= csrf_meta_tag %>
+    <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>The Open Graph Protocol</title>
+    <link rel="stylesheet" href="base.css" type="text/css"/>
+    <meta property="og:title" content="Open Graph Protocol" />
+    <meta property="og:type" content="website" />
+
+    <meta property="og:url" content="http://opengraphprotocol.org/" />
+    <meta property="og:image" content="http://opengraphprotocol.org/open_graph_protocol_logo.png" />
+    <meta property="og:description" content="The Open Graph protocol enables any web page to become a rich object in a social graph. " />
+    <meta property="fb:admins" content="706023" />
+    <link rel="alternate" type="application/rdf+xml" href="http://opengraphprotocol.org/schema/" />
   </head>
   <body class="show">
     <div id="fb-root"></div>
     <script type="text/javascript">
       window.fbAsyncInit = function() {
         FB.init({appId: '187288694643718', status: true, cookie: true,
-          xfbml: true});
+            xfbml: true});
       };
-      (function() {
-        var e = document.createElement('script'); e.async = true;
-        e.src = document.location.protocol +
-        '//connect.facebook.net/en_US/all.js';
-        document.getElementById('fb-root').appendChild(e);
-      }());
-    </script>
-    <%= render :partial => "/shared/header" %>
-    <%= yield %>
-    <%= render :partial => "/shared/google" %>
+(function() {
+ var e = document.createElement('script'); e.async = true;
+ e.src = document.location.protocol +
+ '//connect.facebook.net/en_US/all.js';
+ document.getElementById('fb-root').appendChild(e);
+ }());
+</script>
+<%= render :partial => "/shared/header" %>
+<%= yield %>
+<%= render :partial => "/shared/google" %>
   </body>
 </html>
