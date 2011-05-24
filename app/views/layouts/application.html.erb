@@ -1,10 +1,9 @@
-<html xmlns="http://www.w3.org/1999/xhtml" 
-  xmlns:og="http://opengraphprotocol.org/schema/" 
-  xmlns:fb="http://www.facebook.com/2008/fbml" 
-  xml:lang="en"> 
-  <head id="html-head">
-    <%= content_for :facebookmeta %>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="http://www.facebook.com/2008/fbml">
+  <head>
     <title><%= content_for :title %></title>
+    <%= content_for :facebookmeta %>
     <meta name="google-site-verification" content="RXjWilEYk0eC_6ulYSV_AaFVSQe8nHI6Zw4_W9dVR5I" />
     <%= javascript_include_tag    "vendor/jquery.min", 
       "vendor/quote.rotator", 
