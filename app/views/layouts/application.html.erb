@@ -20,17 +20,5 @@
     <%= render :partial => "/shared/header" %>
     <%= yield %>
     <%= render :partial => "/shared/google" %>
-    <div id="fb-root"></div>
-    <script src="http://connect.facebook.net/en_US/all.js"></script>
-    <script>
-      FB.init({
-        appId: "162180660488445",
-        status: true,
-        // check login status
-        cookie: true,
-        // enable cookies to allow the server to access the session
-        xfbml: true // parse XFBML
-      });
-    </script>
   </body>
 </html>
