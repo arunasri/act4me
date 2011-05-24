@@ -20,14 +20,16 @@
   <p><span>Director </span> <%= movie.director %></p>
   <p><span>Producer </span> <%= movie.producer %></p>
 </div>
+
 <div class="grid_14">
   <ul id="quotes">
     <%= render :partial => 'quote', :collection => movie.tweets.assesed %> 
   </ul>
 </div>
+
 <div class="grid_14">
   <% link_to 'Trailer', movie, :class => 'button' %>
   <% link_to 'Songs', movie, :class => 'button' %>
 </div>
-</div>
+
 <div class="clear"></div>
