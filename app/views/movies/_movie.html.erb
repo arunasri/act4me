@@ -7,25 +7,29 @@
     <span class="percentage"><%= movie.computed_score %></span>
     <span class="percentage-sign">%</span>
     <span class="voters"><%= movie.tweets.assesed.count %> tweets</span>
-    <div class="mbm">
+    <span class="fbreplace">
+      <!-- FBML 
       <fb:like href="<%= movie_url(movie) %>" send="true" show_faces="false">
       </fb:like>
-    </div>
+      FBML -->
+    </span>
   </div>
-  <div class="details grid_14">
-    <p><span>Released on </span> <%= movie.released_on.strftime("%d %B, %Y") %></p>
-    <p><span>Starring </span> <%= movie.cast %></p>
-    <p><span>Director </span> <%= movie.director %></p>
-    <p><span>Producer </span> <%= movie.producer %></p>
-  </div>
-  <div class="grid_14">
-    <ul id="quotes">
-      <%= render :partial => 'quote', :collection => movie.tweets.assesed %> 
-    </ul>
-  </div>
-  <div class="grid_14">
-    <% link_to 'Trailer', movie, :class => 'button' %>
-    <% link_to 'Songs', movie, :class => 'button' %>
-  </div>
+</div>
+
+<div class="details grid_14">
+  <p><span>Released on </span> <%= movie.released_on.strftime("%d %B, %Y") %></p>
+  <p><span>Starring </span> <%= movie.cast %></p>
+  <p><span>Director </span> <%= movie.director %></p>
+  <p><span>Producer </span> <%= movie.producer %></p>
+</div>
+<div class="grid_14">
+  <ul id="quotes">
+    <%= render :partial => 'quote', :collection => movie.tweets.assesed %> 
+  </ul>
+</div>
+<div class="grid_14">
+  <% link_to 'Trailer', movie, :class => 'button' %>
+  <% link_to 'Songs', movie, :class => 'button' %>
+</div>
 </div>
 <div class="clear"></div>
