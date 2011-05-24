@@ -8,8 +8,8 @@
     <span class="percentage-sign">%</span>
     <span class="voters"><%= movie.tweets.assesed.count %> tweets</span>
     <div class="mbm">
-      <iframe src="http://www.facebook.com/widgets/like.php?href=<%= movie_url(movie)%>" scrolling="no" frameborder="0" style="border:none; width:450px; height:80px">
-      </iframe>
+      <fb:like href="<%= movie_url(movie) %>" send="true" show_faces="false">
+      </fb:like>
     </div>
   </div>
 </div>
