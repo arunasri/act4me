@@ -7,10 +7,9 @@
     <span class="percentage"><%= movie.computed_score %></span>
     <span class="percentage-sign">%</span>
     <span class="voters"><%= movie.tweets.assesed.count %> tweets</span>
-    <div class="post-fb-like"> 
-      <fb:like href="<%= movie_url(movie) %>" send="true" width="625" height="61">
-      </fb:like>
-    </div>
+    <span  class='st_twitter_vcount' displayText='Tweet'></span>
+    <span  class='st_email_vcount' displayText='Email'></span>
+    <span  class='st_facebook_vcount' displayText='Facebook'></span>
   </div>
 </div>
 
