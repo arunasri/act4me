@@ -22,7 +22,7 @@ class MoviesController < ApplicationController
   # GET /movies
   # GET /movies.xml
   def index
-    @movies = Movie.active.order(:released_on).paginate(:page => params[:page], :per_page => 12)
+    @movies = Movie.active.order(:released_on).paginate(:page => params[:page], :per_page => 18)
     respond_to do |format|
       format.mobile
       format.html # index.html.erb
