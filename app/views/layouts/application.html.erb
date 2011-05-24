@@ -4,6 +4,8 @@
     xmlns:fb="http://www.facebook.com/2008/fbml" 
 	xml:lang="en"> 
   <head>
+    <title><%= content_for :title %></title>
+    <%= content_for :facebookmeta %>
     <meta name="google-site-verification" content="RXjWilEYk0eC_6ulYSV_AaFVSQe8nHI6Zw4_W9dVR5I" />
     <%= javascript_include_tag    "vendor/jquery.min", 
       "vendor/quote.rotator", 
@@ -14,7 +16,6 @@
     <%= stylesheet_link_tag "compiled/grid", "compiled/text" %>
     <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Play:regular,bold&subset=greek,latin' %>
     <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=greek,latin' %>
-    <%= content_for :facebookmeta %>
     <%= csrf_meta_tag %>
   </head>
   <body class="show">

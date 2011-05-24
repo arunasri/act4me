@@ -1,9 +1,11 @@
 <% content_for :facebookmeta do %>
-  <meta property="og:title" content="<%= movie.name %>" />
-  <meta property="og:image" content="<%= request.protocol + request.host_with_port + movie.vertical.mobile.url %>" />
-  <meta property="og:url" content="<%= movie_url(movie) %>" />
-  <meta property="og:type" content="movie" />
-  <meta property="og:site_name" content="Reviewumpire" />
-  <meta property="fb:app_id" content="162180660488445" />
-  <meta property="fb:admins" content="57728908711" />
+  <meta property="og:title" content="<%= movie.name %>"/>
+    <meta property="og:type" content="movie"/>
+    <meta property="og:url" content="<%= movie_url(movie) %>"/>
+    <meta property="og:image" content="<%= request.protocol + request.host_with_port + movie.vertical.mobile.url %>"/>
+    <meta property="og:site_name" content="ReviewUmpire"/>
+    <meta property="fb:app_id" content="162180660488445" />
+    <meta property="fb:admins" content="57728908711" />
+    <meta property="og:description"
+    content="<%= movie.formatted_score %> scored on reveiwumpire."/>
 <% end %>
