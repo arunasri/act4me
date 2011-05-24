@@ -23,15 +23,5 @@ $(document).ready(function() {
 			donetext: "We've hit the end of the reviews."
 		});
 	}
-	window.fbAsyncInit = function() {
-		FB.init({
-			appId: "162180660488445",
-			status: true,
-			// check login status
-			cookie: true,
-			// enable cookies to allow the server to access the session
-			xfbml: true // parse XFBML
-		});
-	};
 });
 
