@@ -3,16 +3,19 @@
   <head>
     <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <title>The Open Graph Protocol</title>
-    <link rel="stylesheet" href="base.css" type="text/css"/>
-    <meta property="og:title" content="Open Graph Protocol" />
-    <meta property="og:type" content="website" />
-
-    <meta property="og:url" content="http://opengraphprotocol.org/" />
-    <meta property="og:image" content="http://opengraphprotocol.org/open_graph_protocol_logo.png" />
-    <meta property="og:description" content="The Open Graph protocol enables any web page to become a rich object in a social graph. " />
-    <meta property="fb:admins" content="706023" />
-    <link rel="alternate" type="application/rdf+xml" href="http://opengraphprotocol.org/schema/" />
+    <title><%= content_for :title %></title>
+    <%= content_for :facebookmeta %>
+    <meta name="google-site-verification" content="RXjWilEYk0eC_6ulYSV_AaFVSQe8nHI6Zw4_W9dVR5I" />
+    <%= javascript_include_tag    "vendor/jquery.min", 
+      "vendor/quote.rotator", 
+      "vendor/scroll", 
+      "vendor/rails", 
+      "application" 
+    %>
+    <%= stylesheet_link_tag "compiled/grid", "compiled/text" %>
+    <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Play:regular,bold&subset=greek,latin' %>
+    <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=greek,latin' %>
+    <%= csrf_meta_tag %>
   </head>
   <body class="show">
     <div id="fb-root"></div>
