@@ -3,7 +3,7 @@
     <%= auto_link(simple_format(h(quote.text)), :html => {:class => 'auto-link', :target => :_blank } ) %>
   </blockquote>
   <p>
-    <%= image_tag quote.profile_image_url, :rel => quote.twitter_url %>
+    <%= image_tag quote.profile_image_url %>
     <%= quote.from_user %>
   </p>
 <% end %>
