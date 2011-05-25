@@ -3,14 +3,7 @@
 <html>
   <head xmlns:og="http://opengraphprotocol.org/schema/">
     <meta charset="utf-8" />
-    <% if @movie %>
-      <%= set_meta_tags :open_graph => {
-        :title => @movie.name,
-        :type  => :movie,
-        :url   => movie_url(@movie),
-        :image =>  request.protocol + request.host_with_port + @movie.vertical.thumb.url
-      }
-    %>
+    <%= display_meta_tags :site => 'ReviewUmpire' %>
   <% end %>
   <title><%= content_for :title %></title>
   <meta name="google-site-verification" content="RXjWilEYk0eC_6ulYSV_AaFVSQe8nHI6Zw4_W9dVR5I" />

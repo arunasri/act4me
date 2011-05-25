@@ -1,5 +1,9 @@
-<%= render :partial => "/movies/facebook", :locals => { :movie => @movie } %>
-
+<%= set_meta_tags :open_graph => {
+        :title => @movie.name,
+        :type  => :movie,
+        :url   => movie_url(@movie),
+        :image =>  request.protocol + request.host_with_port + @movie.vertical.thumb.url
+      }%>
 <% content_for :keywords do %>
   <%= "#{@movie.name} movie reviews, #{@movie.name} tweets, #{@movie.name} talk, #{@movie.name} positive talk, #{@movie.name} negative talk" %> 
 <% end %>
