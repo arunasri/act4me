@@ -2,7 +2,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
   <head>
-    <%= display_meta_tags :site => 'ReviewUmpire' %>
+    <%= content_for :facebookmeta %>
+    <title><%= content_for :title %></title>
     <title><%= content_for :title %></title>
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a2/jquery.mobile-1.0a2.min.css" />
     <%= stylesheet_link_tag "mobile" %>

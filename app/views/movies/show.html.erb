@@ -1,9 +1,4 @@
-<% set_meta_tags :open_graph => {
-        :title => @movie.name,
-        :type  => :movie,
-        :url   => movie_url(@movie),
-        :image =>  request.protocol + request.host_with_port + @movie.vertical.thumb.url
-      }%>
+<% render :partial => "movies/facebook", :locals => { :movie => @movie } %>
 <% content_for :keywords do %>
   <%= "#{@movie.name} movie reviews, #{@movie.name} tweets, #{@movie.name} talk, #{@movie.name} positive talk, #{@movie.name} negative talk" %> 
 <% end %>
@@ -15,6 +10,10 @@
 
 <% content_for :color do %>
   red
+<% end %>
+
+<% content_for :title do %>
+  <%= @movie.name %>
 <% end %>
 
 
