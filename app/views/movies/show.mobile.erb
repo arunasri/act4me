@@ -1,3 +1,10 @@
+<% set_meta_tags :open_graph => {
+        :title => @movie.name,
+        :type  => :movie,
+        :url   => movie_url(@movie),
+        :image =>  request.protocol + request.host_with_port + @movie.vertical.thumb.url
+      }%>
+<
 <% cache(:action => 'show', :id => @movie.id, :controller => 'movies', :content_type => 'mobile') do %>
   <% content_for :title do %>
     <h1><%= @movie.name %></h1>
