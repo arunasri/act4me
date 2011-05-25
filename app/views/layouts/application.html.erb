@@ -8,7 +8,7 @@
         :title => @movie.name,
         :type  => :movie,
         :url   => movie_url(@movie),
-        :image =>  request.protocal + request.with_host_and_port + @movie.vertical.image.thumb.url
+        :image =>  request.protocol + request.host_with_port + @movie.vertical.thumb.url
       }
     %>
   <% end %>
