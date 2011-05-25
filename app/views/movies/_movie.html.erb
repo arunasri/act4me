@@ -9,8 +9,12 @@
     <span class="voters"><%= movie.tweets.assesed.count %> tweets</span>
   </div>
   <div class="score-board grid_14">
-    <fb:like href="<%= request.url %>" width="450" height="80"/>
+    <iframe src="http://www.facebook.com/plugins/like.php?href=<%= request.url %>"
+        scrolling="no" frameborder="0"
+        style="border:none; width:450px; height:80px"><iframe>
+
   </div>
+
 </div>
 
 <div class="details grid_14">

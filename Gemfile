@@ -33,8 +33,7 @@ group :test do
   gem 'faker'
   gem 'timecop'
   gem 'shoulda'
-  gem 'rb-inotify'
-  gem 'libnotify', :git => 'git://github.com/splattael/libnotify.git'
+  gem 'growl'
   gem "shoulda-matchers"
   gem 'factory_girl_rails'
   gem 'capistrano'
