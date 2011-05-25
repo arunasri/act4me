@@ -9,12 +9,10 @@
     <span class="voters"><%= movie.tweets.assesed.count %> tweets</span>
   </div>
   <div class="score-board grid_14">
-    <iframe src="http://www.facebook.com/plugins/like.php?href=<%= request.url %>"
-        scrolling="no" frameborder="0"
-        style="border:none; width:450px; height:80px"><iframe>
-
+    <span  class='st_email_hcount' displayText='Email'>
+    </span><span  class='st_twitter_hcount' displayText='Tweet'></span>
+    <span  class='st_facebook_hcount' displayText='Facebook'></span>
   </div>
-
 </div>
 
 <div class="details grid_14">
@@ -34,5 +32,4 @@
   <% link_to 'Trailer', movie, :class => 'button' %>
   <% link_to 'Songs', movie, :class => 'button' %>
 </div>
-
 <div class="clear"></div>

@@ -19,15 +19,8 @@
     <%= render :partial => "/shared/header" %>
     <%= yield %>
     <%= render :partial => "/shared/google" %>
-    <div id="fb-root"></div>
-    <script src="http://connect.facebook.net/en_US/all.js"></script>
-    <script>
-      FB.init({
-        appId  : "162180660488445",
-        status : true, // check login status
-        cookie : true, // enable cookies to allow the server to access the session
-        xfbml  : true  // parse XFBML
-      });
-    </script>
+    <script type="text/javascript">var switchTo5x=true;</script>
+    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript">stLight.options({publisher:'786466cc-5420-4650-a5ea-bfbbc1672f68'});</script>
   </body>
 </html>
