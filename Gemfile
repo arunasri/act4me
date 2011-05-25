@@ -9,7 +9,7 @@ gem 'geokit'
 gem 'geokit-rails3'
 gem 'rails', '3.0.7'
 gem 'hoptoad_notifier'
-
+gem 'meta-tags', :require => 'meta_tags'
 gem 'rake', '0.8.7'
 
 # Bundle edge Rails instead:

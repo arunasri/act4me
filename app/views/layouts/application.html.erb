@@ -3,26 +3,34 @@
 <html>
   <head xmlns:og="http://opengraphprotocol.org/schema/">
     <meta charset="utf-8" />
-    <title><%= content_for :title %></title>
-    <%= content_for :facebookmeta %>
-    <meta name="google-site-verification" content="RXjWilEYk0eC_6ulYSV_AaFVSQe8nHI6Zw4_W9dVR5I" />
-    <%= javascript_include_tag    "vendor/jquery.min", 
-      "vendor/quote.rotator", 
-      "vendor/scroll", 
-      "vendor/rails", 
-      "application" 
+    <% if @movie %>
+      <%= set_meta_tags :open_graph => {
+        :title => @movie.name
+        :type  => :movie,
+          :url   => movie_url(@movie),
+          :image =>  request.protocal + request.with_host_and_port + @movie.vertical.image.thumb.url
+      }
     %>
-    <%= stylesheet_link_tag "compiled/grid", "compiled/text" %>
-    <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Play:regular,bold&subset=greek,latin' %>
-    <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=greek,latin' %>
-    <%= csrf_meta_tag %>
-  </head>
-  <body class="show">
-    <%= render :partial => "/shared/header" %>
-    <%= yield %>
-    <%= render :partial => "/shared/google" %>
-    <script type="text/javascript">var switchTo5x=true;</script>
-    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
-    <script type="text/javascript">stLight.options({publisher:'786466cc-5420-4650-a5ea-bfbbc1672f68'});</script>
-  </body>
+  <% end %>
+  <title><%= content_for :title %></title>
+  <meta name="google-site-verification" content="RXjWilEYk0eC_6ulYSV_AaFVSQe8nHI6Zw4_W9dVR5I" />
+  <%= javascript_include_tag    "vendor/jquery.min", 
+    "vendor/quote.rotator", 
+    "vendor/scroll", 
+    "vendor/rails", 
+    "application" 
+  %>
+  <%= stylesheet_link_tag "compiled/grid", "compiled/text" %>
+  <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Play:regular,bold&subset=greek,latin' %>
+  <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=greek,latin' %>
+  <%= csrf_meta_tag %>
+</head>
+<body class="show">
+  <%= render :partial => "/shared/header" %>
+  <%= yield %>
+  <%= render :partial => "/shared/google" %>
+  <script type="text/javascript">var switchTo5x=true;</script>
+  <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+  <script type="text/javascript">stLight.options({publisher:'786466cc-5420-4650-a5ea-bfbbc1672f68'});</script>
+</body>
 </html>
