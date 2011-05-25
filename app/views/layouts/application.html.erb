@@ -5,10 +5,10 @@
     <meta charset="utf-8" />
     <% if @movie %>
       <%= set_meta_tags :open_graph => {
-        :title => @movie.name
+        :title => @movie.name,
         :type  => :movie,
-          :url   => movie_url(@movie),
-          :image =>  request.protocal + request.with_host_and_port + @movie.vertical.image.thumb.url
+        :url   => movie_url(@movie),
+        :image =>  request.protocal + request.with_host_and_port + @movie.vertical.image.thumb.url
       }
     %>
   <% end %>
