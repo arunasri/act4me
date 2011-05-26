@@ -35,7 +35,7 @@ class MoviesController < ApplicationController
   def show
     puts session[:geo_location]
     @movie = Movie.find(params[:id].to_i)
-    @tweets = @movie.tweets.paginate(:page => params[:page], :per_page => 21)
+    @tweets = @movie.tweets.assesed.paginate(:page => params[:page], :per_page => 21)
     respond_to do |format|
       format.mobile
       format.html # show.html.erb
