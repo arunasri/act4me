@@ -22,15 +22,27 @@ class Movie < ActiveRecord::Base
   accepts_nested_attributes_for :tweets, :allow_destroy => true
 
   def formatted_score
-    "#{computed_score}%" rescue "N/A"
+    unless last_computed_score
+      persist_last_computed_score!
+    end
+
+    last_computed_score ?  "#{last_computed_score}" : "N/A"
   end
 
-  def computed_score
-    return 0 if tweets.assesed.count == 0
-    (((tweets.positive.count + (tweets.mixed.count * 0.5)) * 100.0)/ tweets.assesed.count).to_i
-  end
 
   def to_param
     "#{id}-#{name.downcase.gsub(/[^[:alnum:]]/,'-')}".gsub(/-{2,}/,'-')
+  end
+
+  def persist_last_computed_score!
+    if self.last_computed_score = computed_score rescue nil
+      save
+    end
+  end
+
+  private
+
+  def computed_score
+    (((tweets.positive.count + (tweets.mixed.count * 0.5)) * 100.0)/ tweets.assesed.count).to_i
   end
 end

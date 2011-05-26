@@ -25,6 +25,7 @@ Tweet2review::Application.routes.draw do
       get :edit_external
       get :edit_spotlight
       get :edit_terminate
+      get :edit_assesed
     end
     resources :keywords
   end

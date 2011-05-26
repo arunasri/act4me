@@ -2,7 +2,7 @@ $ninesixty-columns: 24;
 $bubble-image: "/images/used/bubble1.png";
 
 .container_24 {
-   @include grid-system(24); 
+   @include grid-system(24);
 }
 
 @mixin no_repeat_image($image){
@@ -39,15 +39,17 @@ overflow: hidden;
         overflow: hidden;
         padding: 5px 10px 5px 7px;
         position: relative;
-        .percent {
+        .percentage-widget {
             background-position: 100% 50%;
             background-repeat: no-repeat;
             color: #FFFFFF;
             float: left;
-            font-size: 18px;
-            font-weight: bold;
             padding-right: 20px;
-            span.sign {
+            span.percentage {
+              font-size: 18px;
+              font-weight: bold;
+            }
+            span.percentage-sign {
                 font-size: 12px;
                 font-weight: normal;
                 line-height: 28px;
@@ -65,7 +67,7 @@ overflow: hidden;
     .title{
         color: #000000;
         display: block;
-        font-weight: bold;    
+        font-weight: bold;
     }
 
     .small-movie {
@@ -78,9 +80,9 @@ overflow: hidden;
                 display: block;
                 height: 173px;
                 width: 138px;
-                
+
             }
-            
+
         }
     }
 }
@@ -115,7 +117,7 @@ p.tweet-box {
 }
 .tweet-box {
    border: 2px dotted gray;
-   
+
 }
 .fblike {
     float: right;

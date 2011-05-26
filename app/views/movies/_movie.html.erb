@@ -4,11 +4,10 @@
 
 <div class="grid_14 omega">
   <div class="score-board grid_14">
-    <span class="percentage"><%= movie.computed_score %></span>
-    <span class="percentage-sign">%</span>
+    <%= formatted_score(movie) %>
     <span class="voters"><%= movie.tweets.assesed.count %> tweets</span>
     <div class="mbm">
-      <fb:like href="<%= movie_url(movie) %>" layout="standard" show-faces="true" action="like" colorscheme="light" />
+      <fb:like href="<%= movie_url(movie) %>" layout="standard" show-faces="true" />
     </div>
   </div>
 </div>
@@ -22,7 +21,7 @@
 
 <div class="grid_14">
   <ul id="quotes">
-    <%= render :partial => 'quote', :collection => movie.tweets.assesed %> 
+    <%= render :partial => 'quote', :collection => movie.tweets.assesed %>
   </ul>
 </div>
 

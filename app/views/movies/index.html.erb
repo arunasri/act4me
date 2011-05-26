@@ -1,35 +1,33 @@
-<% cache(:action => 'index', :controller => 'movies', :content_type => 'html') do %>
-  <% content_for :title do %>
-    Review Umpire
-  <% end %>
+<% content_for :title do %>
+  Review Umpire
+<% end %>
 
-  <% content_for :description do %>
-    Aggregates reviews of telugu movies.
-  <% end %>
+<% content_for :description do %>
+  Aggregates reviews of telugu movies.
+<% end %>
 
-  <% content_for :keywords do %>
-    <%= "telugu movie reviews, telugu movie tweets" %> 
-  <% end %>
+<% content_for :keywords do %>
+  <%= "telugu movie reviews, telugu movie tweets" %>
+<% end %>
 
-  <% content_for :subheader do %>
-    Recent Releases
-  <% end %>
+<% content_for :subheader do %>
+  Recent Releases
+<% end %>
 
-  <div id="movies-page">
-    <div class="container_24" id="movies">
-      <% @movies.in_groups_of(6).each do | tg | %>
-        <% tg.compact! %>
-        <div class="movies-list">
-          <%= render :partial => "/movies/small", :collection => tg, :as => :movie %>
-          <div class="clear"></div>
-        </div>
-      <% end %>
-    </div>
-
-    <% if @movies.next_page %>
-      <div id="next">
-        <%= link_to 'next', url_for(params.merge(:page => @movies.next_page)) %>
+<div id="movies-page">
+  <div class="container_24" id="movies">
+    <% @movies.in_groups_of(6).each do | tg | %>
+      <% tg.compact! %>
+      <div class="movies-list">
+        <%= render :partial => "/movies/small", :collection => tg, :as => :movie %>
+        <div class="clear"></div>
       </div>
     <% end %>
   </div>
-<% end %>
+
+  <% if @movies.next_page %>
+    <div id="next">
+      <%= link_to 'next', url_for(params.merge(:page => @movies.next_page)) %>
+    </div>
+  <% end %>
+</div>
