@@ -9,7 +9,7 @@
 
   <div class="grid_12">
     <div class="grid_12">
-      <%= auto_link tweet.object.text, :urls, :target => :_blank %>
+      <%= auto_link(simple_format(h(tweet.object.text)), :html => { :target => :_blank } ) %>
     </div>
     <div class="grid_12">
       <% %w(positive negative mixed fresh terminate).each do | cat | %>
