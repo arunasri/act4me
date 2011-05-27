@@ -18,16 +18,16 @@ class Movie < ActiveRecord::Base
   scope :this_month,   lambda { where(:released_on => (1.month.ago)..Time.now) }
   scope :this_weekend, lambda { where(:released_on => (Time.now.beginning_of_week)..(Time.now.end_of_week)) }
   scope :last_weekend, lambda { where(:released_on => (1.week.ago.beginning_of_week)..(1.week.ago.end_of_week)) }
-  after_save :persist_last_computed_score!
-
   accepts_nested_attributes_for :tweets, :allow_destroy => true
 
   def to_param
     "#{id}-#{name.downcase.gsub(/[^[:alnum:]]/,'-')}".gsub(/-{2,}/,'-')
   end
 
-  def persist_last_computed_score!
+  def sync
+    keywords.each(&:perform_search)
     self.last_computed_score = computed_score rescue nil
+    save
   end
 
   private

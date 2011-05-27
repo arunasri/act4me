@@ -63,9 +63,9 @@ class MoviesController < ApplicationController
 
   # GET /movies/1/edit
   def sync
-    @movie = Movie.find(params[:id].to_i).tap {|t| t.keywords.query_twitter }
+    @movie = Movie.find(params[:id].to_i).tap(&:sync)
     @tweets = @movie.tweets.paginate(:page => params[:page])
-    render :action => 'edit'
+    render :json => { :html => 'ok' }
   end
 
   %w(assesed positive negative mixed spotlight fresh terminate external).each do |method|

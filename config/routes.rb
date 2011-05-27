@@ -10,8 +10,11 @@ Tweet2review::Application.routes.draw do
     end
 
     member do
+      put :sync
+    end
+
+    member do
       get :closest
-      get :sync
       get :positive
       get :negative
       get :mixed
