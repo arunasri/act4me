@@ -7,6 +7,10 @@ every 1.day, :at => '4:30 am' do
 end
 
 every :hour do
+  rake "handy:db:dump2s3"
+end
+
+every :hour do
   rake "tweets:this_week_releases"
 end
 

@@ -105,7 +105,6 @@ end
 
 describe Tweet, "#from_hashie" do
   subject { @tweet }
-
   before(:all) do
     hash = {
       "created_at"=>"Thu, 19 May 2011 11:27:50 +0000",

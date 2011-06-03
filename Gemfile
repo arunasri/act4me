@@ -22,8 +22,11 @@ gem 'twitter', '0.9.8'
 gem "will_paginate", "3.0.pre2"
 gem 'whenever', :require => false
 
-group :test do
+group :development do
   gem 'ruby-debug'
+end
+
+group :test do
   gem 'database_cleaner'
   gem 'guard'
   gem "rspec-rails"

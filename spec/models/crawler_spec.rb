@@ -100,8 +100,12 @@ describe Tweet do
     @keyword = Factory(:keyword, :name => "titanic")
     @crawler = Crawler.new(@keyword)
 
-    @crawler.should_receive(:current_results).and_return([hash])
+    @crawler.should_receive(:current_results).and_return([hash, hash])
     @crawler.save_tweets
+  end
+
+  it "should only save one tweet" do
+    @keyword.tweets.count.should eql(1)
   end
 
   subject { @keyword.tweets.last }
