@@ -30,6 +30,10 @@ GEM
       activesupport (= 3.0.7)
     activesupport (3.0.7)
     arel (2.0.10)
+    aws (2.5.3)
+      http_connection
+      uuidtools
+      xml-simple
     builder (2.1.2)
     capistrano (2.6.0)
       highline
@@ -73,12 +77,16 @@ GEM
       guard (>= 0.2.1)
     guard-rspec (0.3.1)
       guard (>= 0.2.2)
+    handy (0.0.15)
+      aws (>= 2.3.21)
+      capistrano (>= 2.5.19)
     hashie (0.2.2)
     highline (1.6.2)
     hoptoad_notifier (2.4.10)
       activesupport
       builder
     hpricot (0.8.4)
+    http_connection (1.4.1)
     httparty (0.5.2)
       crack (= 0.1.6)
     i18n (0.5.0)
@@ -155,10 +163,12 @@ GEM
       oauth (~> 0.4.1)
       yajl-ruby (~> 0.7.0)
     tzinfo (0.3.27)
+    uuidtools (2.1.2)
     whenever (0.6.7)
       aaronh-chronic (>= 0.3.9)
       activesupport (>= 2.3.4)
     will_paginate (3.0.pre2)
+    xml-simple (1.0.15)
     yajl-ruby (0.7.9)
 
 PLATFORMS
@@ -179,6 +189,7 @@ DEPENDENCIES
   guard
   guard-compass
   guard-rspec
+  handy
   hashie
   hoptoad_notifier
   hpricot
