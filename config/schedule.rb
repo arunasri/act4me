@@ -1,4 +1,4 @@
-every 7.days do
+every 3.days do
   rake "tweets:month_releases"
 end
 
