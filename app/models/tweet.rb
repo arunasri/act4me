@@ -28,8 +28,6 @@ class Tweet < ActiveRecord::Base
 
   scope :assesed, where(:category => CATEGORIES)
 
-  scope :spotlight, where(:featured => true)
-
   def url
     ActionView::Helpers::TextHelper::AUTO_LINK_RE.match(text)[0]
   end
@@ -40,10 +38,6 @@ class Tweet < ActiveRecord::Base
 
   def assesed?
     !fresh?
-  end
-
-  def not_featured?
-    !featured?
   end
 
   def twitter_url

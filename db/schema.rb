@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110502022508) do
+ActiveRecord::Schema.define(:version => 20110605133309) do
 
   create_table "jobs", :force => true do |t|
     t.integer  "number_of_requests"
@@ -55,17 +55,11 @@ ActiveRecord::Schema.define(:version => 20110502022508) do
     t.integer  "from_user_id",       :limit => 8
     t.integer  "to_user_id",         :limit => 8
     t.integer  "keyword_id"
-    t.string   "iso_language_code"
     t.datetime "created_on_twitter"
     t.string   "category"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "featured",                        :default => false
     t.integer  "movie_id"
-    t.text     "open_amplify"
-    t.integer  "max_polarity"
-    t.integer  "min_polarity"
-    t.integer  "mean_polarity"
   end
 
 end

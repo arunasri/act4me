@@ -8,15 +8,6 @@ $(document).ready(function() {
 		}
 	});
 
-	$("#feature_all").live("click", function() {
-		if ($(this).is(":checked")) {
-			$("input[id$='featured']").attr('checked', 'checked')
-		} else {
-
-			$("input[id$='featured']").removeAttr('checked')
-		}
-	});
-
 	$(".category_all").live('click', function() {
 		$("input[name$='[category]'][value='" + $(this).val() + "']").each(function() {
 			$(this).attr('checked', 'checked');

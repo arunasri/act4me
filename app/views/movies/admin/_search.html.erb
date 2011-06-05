@@ -9,14 +9,10 @@
     </div>
     <div class="grid_12">
       <% %w(positive negative mixed fresh terminate).each do | cat | %>
-        <%= radio_button_tag "admin_category", cat , false, :class => 'category_all'%> 
+        <%= radio_button_tag "admin_category", cat , false, :class => 'category_all'%>
         <%= label_tag cat %>
       <% end %>
     </div>
-  </div>
-
-  <div class="grid_2">
-    <input type="checkbox" id="feature_all">
   </div>
 
   <div class="grid_2 omega">

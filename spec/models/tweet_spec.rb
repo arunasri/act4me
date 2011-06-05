@@ -9,19 +9,9 @@ describe Tweet  do
     it { should_not be_assesed }
   end
 
-  context "not featured" do
-    before(:each) { subject.update_attributes(:featured => false) }
-    it { should_not be_featured }
-  end
-
   context "not assesed" do
     before(:each) { subject.update_attributes(:category => 'fresh') }
     it { should_not be_assesed }
-  end
-
-  context "when featured" do
-    before(:each) { subject.update_attributes(:featured => true) }
-    it { should be_featured }
   end
 
   context "without url in text" do
@@ -68,16 +58,13 @@ describe Tweet  do
 end
 
 describe Tweet, "#scopes"  do
+  subject { Tweet }
   before(:all) do
-    @tweet1 = Factory(:negative, :featured => true)
-    @tweet2 = Factory(:negative, :featured => false)
-    @tweet3 = Factory(:mixed,    :featured => true)
-    @tweet4 = Factory(:negative, :featured => false)
-    @tweet5 = Factory(:positive, :featured => false)
-  end
-
-  it "list spotlight" do
-    Tweet.spotlight.map(&:id).should =~ [ @tweet1.id, @tweet3.id ]
+    @tweet1 = Factory(:negative)
+    @tweet2 = Factory(:negative)
+    @tweet3 = Factory(:mixed)
+    @tweet4 = Factory(:negative)
+    @tweet5 = Factory(:positive)
   end
 
   it "list negative" do
