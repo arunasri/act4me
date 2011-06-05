@@ -7,7 +7,7 @@ gem 'meta_search'
 gem 'hpricot'
 gem 'geokit'
 gem 'geokit-rails3'
-gem 'rails', '3.0.5'
+gem 'rails', '3.0.7'
 gem 'hoptoad_notifier'
 gem 'rake', '0.8.7'
 

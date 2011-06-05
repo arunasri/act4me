@@ -12,10 +12,11 @@ class Movie < ActiveRecord::Base
   default_scope :order => "movies.released_on desc"
 
   scope :spotlight,   :limit => 5
-  scope :active, where(:disabled => false)
+  scope :active,       where(:disabled => false)
   scope :this_month,   lambda { where(:released_on => (1.month.ago)..Time.now) }
   scope :this_weekend, lambda { where(:released_on => (Time.now.beginning_of_week)..(Time.now.end_of_week)) }
   scope :last_weekend, lambda { where(:released_on => (1.week.ago.beginning_of_week)..(1.week.ago.end_of_week)) }
+
   accepts_nested_attributes_for :tweets, :allow_destroy => true
   before_update :update_score
 
