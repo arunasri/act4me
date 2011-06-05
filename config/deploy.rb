@@ -26,6 +26,7 @@ namespace :app do
   task :copy_config_files,:roles => :app do
     run "cp -fv #{deploy_to}/shared/config/database.yml #{release_path}/config"
     run "cp -fv #{deploy_to}/shared/config/app_config.yml #{release_path}/config"
+    run "cp -fv #{deploy_to}/shared/config/fog.rb #{release_path}/lib/carrierwave/storage"
   end
 end
 
