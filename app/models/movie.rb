@@ -19,6 +19,7 @@ class Movie < ActiveRecord::Base
   scope :this_weekend, lambda { where(:released_on => (Time.now.beginning_of_week)..(Time.now.end_of_week)) }
   scope :last_weekend, lambda { where(:released_on => (1.week.ago.beginning_of_week)..(1.week.ago.end_of_week)) }
   accepts_nested_attributes_for :tweets, :allow_destroy => true
+  before_update :update_score
 
   def to_param
     "#{id}-#{name.downcase.gsub(/[^[:alnum:]]/,'-')}".gsub(/-{2,}/,'-')
@@ -26,7 +27,6 @@ class Movie < ActiveRecord::Base
 
   def sync
     keywords.each(&:perform_search)
-    self.last_computed_score = computed_score rescue nil
     save
   end
 
@@ -34,5 +34,9 @@ class Movie < ActiveRecord::Base
 
   def computed_score
     (((tweets.positive.count + (tweets.mixed.count * 0.5)) * 100.0)/ tweets.assesed.count).to_i
+  end
+
+  def update_score
+    self.last_computed_score = computed_score rescue nil
   end
 end
