@@ -3,13 +3,11 @@ class Movie < ActiveRecord::Base
   mount_uploader :vertical,   VerticalUploader
   mount_uploader :horizontal, HorizontalUploader
 
+  has_many  :tweets,   :dependent => :destroy, :inverse_of => :movie
+  has_many  :keywords, :dependent => :destroy
+
   validates :name, :presence => true
-
   validates :cast, :presence => true
-
-  has_many :tweets, :dependent => :destroy, :inverse_of => :movie
-
-  has_many :keywords, :dependent => :destroy
 
   default_scope :order => "movies.released_on desc"
 

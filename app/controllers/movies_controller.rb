@@ -22,7 +22,8 @@ class MoviesController < ApplicationController
   # GET /movies
   # GET /movies.xml
   def index
-    @movies = Movie.active.order(:released_on).paginate(:page => params[:page], :per_page => 18)
+    @movies = Movie.active.paginate(:page => params[:page], :per_page => 18)
+
     respond_to do |format|
       format.mobile
       format.html # index.html.erb
@@ -33,7 +34,6 @@ class MoviesController < ApplicationController
   # GET /movies/1
   # GET /movies/1.xml
   def show
-    puts session[:geo_location]
     @movie = Movie.find(params[:id].to_i)
     @tweets = @movie.tweets.assesed.paginate(:page => params[:page], :per_page => 21)
     respond_to do |format|
@@ -117,19 +117,6 @@ class MoviesController < ApplicationController
         format.html { render :action => "edit", :layout => 'admin' }
         format.xml  { render :xml => @movie.errors, :status => :unprocessable_entity }
       end
-    end
-  end
-
-  # DELETE /movies/1
-  # DELETE /movies/1.xml
-  def destroy
-    @movie = Movie.find(params[:id].to_i)
-    @movie.destroy
-    expire_page :action => :index
-
-    respond_to do |format|
-      format.html { redirect_to(movies_url) }
-      format.xml  { head :ok }
     end
   end
 end

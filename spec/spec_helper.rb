@@ -38,3 +38,14 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 end
+
+module AuthenticationTestHelper
+  def login_as_user
+    @controller.stub(:authenticate)
+  end
+
+  def login_as_admin
+    login_as_user
+    session[:admin] = true
+  end
+end

@@ -13,7 +13,7 @@
 </div>
 
 <div class="details grid_14">
-  <p><span>Released on </span> <%= movie.released_on.strftime("%d %B, %Y") %></p>
+  <p><span>Released on </span> <%= movie.released_on.try(:strftime, "%d %B, %Y") %></p>
   <p><span>Starring </span> <%= movie.cast %></p>
   <p><span>Director </span> <%= movie.director %></p>
   <p><span>Producer </span> <%= movie.producer %></p>
