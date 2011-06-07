@@ -29,6 +29,7 @@ group :development do
 end
 
 group :test do
+  gem 'ruby-debug'
   gem 'rb-fsevent'
   gem 'database_cleaner'
   gem 'guard'

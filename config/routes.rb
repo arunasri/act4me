@@ -11,32 +11,27 @@ Tweet2review::Application.routes.draw do
 
     member do
       put :sync
-    end
-
-    member do
       get :closest
       get :positive
       get :negative
       get :mixed
       get :fresh
       get :terminate
-      get :spotlight
-      get :edit_positive
-      get :edit_negative
-      get :edit_mixed
       get :edit_fresh
+      get :edit_mixed
       get :edit_external
-      get :edit_spotlight
+      get :edit_positive
       get :edit_terminate
+      get :edit_negative
       get :edit_assesed
     end
-    resources :keywords
+
+    resources :keywords, :only => [ :create ]
   end
 
-  resources :keywords
+  resources :keywords, :only => [ :destroy ]
 
   match 'login' =>   'application#login'
-
   match 'logout' =>  'application#logout'
 
   root :to => "movies#index"

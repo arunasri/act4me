@@ -1,4 +1,5 @@
 class KeywordsController < ApplicationController
+
   # POST /keywords
   # POST /keywords.xml
   def create
@@ -10,7 +11,7 @@ class KeywordsController < ApplicationController
         format.html { redirect_to(edit_movie_path(@movie), :notice => 'Keyword was successfully created.') }
         format.xml  { render :xml => @keyword, :status => :created, :location => @keyword }
       else
-        format.html { redirect_to(@movie, :notice => 'Keyword was failed to created.') }
+        format.html { redirect_to(edit_movie_path(@movie), :notice => 'Keyword was failed to create.') }
         format.xml  { render :xml => @keyword.errors, :status => :unprocessable_entity }
       end
     end

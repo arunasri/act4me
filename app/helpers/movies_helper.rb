@@ -1,4 +1,5 @@
 module MoviesHelper
+
   def footer_link(title, url_options, options)
     options.update("data-icon" => "custom")
     if current_page?(url_options)
