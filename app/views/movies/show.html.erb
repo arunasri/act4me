@@ -1,6 +1,9 @@
-<% render :partial => "movies/facebook", :locals => { :movie => @movie } %>
+<% content_for :facebookmeta do %>
+  <%= render :partial => "movies/facebook", :locals => { :movie => @movie } %>
+<% end %>
+
 <% content_for :keywords do %>
-  <%= "#{@movie.name} movie reviews, #{@movie.name} tweets, #{@movie.name} talk, #{@movie.name} positive talk, #{@movie.name} negative talk" %> 
+  <%= "#{@movie.name} movie reviews, #{@movie.name} tweets, #{@movie.name} talk, #{@movie.name} positive talk, #{@movie.name} negative talk" %>
 <% end %>
 
 <% content_for :subheader do %>

@@ -1,24 +1,22 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.1//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-2.dtd"> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.1//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-2.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
   <head>
     <%= content_for :facebookmeta %>
-    <title><%= content_for :title %></title>
     <title><%= content_for :title %></title>
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a2/jquery.mobile-1.0a2.min.css" />
     <%= stylesheet_link_tag "mobile" %>
     <script src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.0a2/jquery.mobile-1.0a2.min.js"></script>
     <%= javascript_include_tag "mobile" %>
-    <%= hoptoad_javascript_notifier %>
-  </head> 
-  <body> 
+  </head>
+  <body>
     <div data-role="page">
     <div data-role="header">
       <%= content_for :title %>
     </div><!-- /header -->
-    <div data-role="content">	
-        <%= yield %>
+    <div data-role="content">
+      <%= yield %>
     </div><!-- /content -->
     <div data-role="footer" data-position="inline">
       <%= content_for :menu %>

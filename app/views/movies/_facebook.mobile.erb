@@ -1,10 +1,12 @@
-<% content_for :facebookmeta do %>
-    <meta property="fb:admins" content="57728908711" />
-    <meta property="og:title" content="<%= movie.name %>" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="<%= movie_url(movie) %>" />
-    <meta property="og:image" content="<%= request.protocol + request.host_with_port + movie.vertical.url %>"/>
-    <meta property="og:site_name" content="ReviewUmpire" />
-    <meta property="fb:app_id" content="162180660488445" />
-    <meta property="og:description" content="<%= movie.last_computed_score %>% twitters endorsed." />
-<% end %>
+<meta property="fb:admins" content="57728908711" />
+<meta property="og:title" content="<%= movie.name %>" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="<%= movie_url(movie) %>" />
+<meta property="og:image" content="<%= request.protocol + request.host_with_port + movie.vertical.url %>"/>
+<meta property="og:site_name" content="ReviewUmpire" />
+<meta property="fb:app_id" content="162180660488445" />
+<meta property="og:description" content="<%= movie.last_computed_score %> scored on reveiwumpire.
+Starring: <%= movie.cast %>.
+Director: <%= movie.director %>.
+Producer: <%= movie.producer %>.
+" />

@@ -1,6 +1,9 @@
-<%= render :partial => "movies/facebook", :locals => { :movie => @movie } %>
+<% content_for :facebookmeta do %>
+  <%= render :partial => "movies/facebook", :locals => { :movie => @movie } %>
+<% end %>
+
 <% content_for :title do %>
-  <h1><%= @movie.name %></h1>
+  <%= @movie.name %>
 <% end %>
 
 <%= image_tag(@movie.horizontal.mobile.url)  %>
