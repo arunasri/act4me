@@ -7,7 +7,7 @@
     <%= formatted_score(movie) %>
     <span class="voters"><%= movie.tweets.assesed.count %> tweets</span>
     <div class="mbm">
-      <fb:send href="<%= movie_url(movie) %>" />
+      <fb:like href="<%= movie_url(movie) %>" send= "true" ref="top_left"/>
     </div>
   </div>
 </div>
