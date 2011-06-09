@@ -18,6 +18,7 @@ class Movie < ActiveRecord::Base
   scope :last_weekend, lambda { where(:released_on => (1.week.ago.beginning_of_week)..(1.week.ago.end_of_week)) }
 
   accepts_nested_attributes_for :tweets, :allow_destroy => true
+
   before_update :update_score
 
   def to_param

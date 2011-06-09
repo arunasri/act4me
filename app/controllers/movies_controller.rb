@@ -68,10 +68,12 @@ class MoviesController < ApplicationController
     render :json => { :html => 'ok' }
   end
 
-  %w(assesed positive negative mixed spotlight fresh terminate external).each do |method|
+  %w(assesed positive negative mixed fresh terminate external).each do |method|
+
     define_method(method) do
       @movie = Movie.find(params[:id].to_i)
       @tweets = @movie.tweets.send(method).paginate(:page => params[:page], :per_page => 21)
+
       respond_to do |format|
         format.mobile { render :action => :show }
         format.html { render :action => :show }
