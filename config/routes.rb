@@ -1,5 +1,9 @@
 Tweet2review::Application.routes.draw do
 
+  match "/auth/:provider/callback" => "sessions#create"
+  match "/admin"   => "sessions#admin",   :as => :admin
+  match "/signout" => "sessions#destroy", :as => :signout
+
   match '/movies/:page' => 'movies#index', :constraints => { :page => /\d+/ }
   match '/movies/:id/:action/:page' => 'movies'
 
@@ -30,9 +34,6 @@ Tweet2review::Application.routes.draw do
   end
 
   resources :keywords, :only => [ :destroy ]
-
-  match 'login' =>   'application#login'
-  match 'logout' =>  'application#logout'
 
   root :to => "movies#index"
 end

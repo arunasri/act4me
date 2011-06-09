@@ -16,7 +16,9 @@
     <% end %>
   </div>
   <div class="grid_12">
-    <%= render @movie.keywords %>
+    <% @movie.keywords.each do | keyword | %>
+      <%= button_to keyword.name, keyword, :confirm => "Are you sure?", :method => :delete, :class => 'tweet-link' %>
+    <% end %>
   </div>
   <div class="grid_12" id="search-area">
     <%= button_to 'Search Twitter', sync_movie_path(@movie), :method => :put, :remote => true %>
