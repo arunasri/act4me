@@ -23,8 +23,7 @@ gem 'twitter', '0.9.8'
 gem "will_paginate", "3.0.pre2"
 gem 'whenever', :require => false
 gem 'handy'
-gem "omniauth"
-
+gem 'omniauth', "0.2.0"
 group :development do
   gem 'ruby-debug'
 end
