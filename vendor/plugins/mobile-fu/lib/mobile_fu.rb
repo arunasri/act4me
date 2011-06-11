@@ -84,7 +84,7 @@ module ActionController
       # the device making the request is matched to a device in our regex.
 
       def is_mobile_device?
-        puts request.user_agent
+        Rails.logger.info request.user_agent
         request.user_agent.to_s.downcase =~ Regexp.new(ActionController::MobileFu::MOBILE_USER_AGENTS)
       end
 
