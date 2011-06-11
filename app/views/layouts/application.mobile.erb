@@ -4,23 +4,37 @@
   <head>
     <%= content_for :facebookmeta %>
     <title><%= content_for :title %></title>
-    <link rel="stylesheet"  href="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.css" />
     <%= stylesheet_link_tag "mobile" %>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.5.min.js"></script>
-	  <script type="text/javascript" src="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.css" />
+    <script src="http://code.jquery.com/jquery-1.5.2.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.js"></script>
     <%= javascript_include_tag "mobile" %>
   </head>
   <body>
-    <div data-role="page">
-    <div data-role="header">
-      <%= content_for :title %>
-    </div><!-- /header -->
-    <div data-role="content">
-      <%= yield %>
-    </div><!-- /content -->
-    <div data-role="footer" data-position="inline">
-      <%= content_for :menu %>
-    </div><!-- /footer -->
+    <div data-role="page" data-theme="b" id="jqm-home">
+      <div data-role="header">
+        <%= content_for :header %>
+      </div><!-- /header -->
+      <div data-role="content">
+        <%= yield %>
+      </div><!-- /content -->
+      <div data-role="footer" data-position="inline">
+        <%= content_for :menu %>
+      </div><!-- /footer -->
+    <div id="fb-root"></div>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({appId: '162180660488445', status: true, cookie: true,
+          xfbml: true});
+      };
+      (function() {
+        var e = document.createElement('script'); e.async = true;
+        e.src = document.location.protocol +
+        '//connect.facebook.net/en_US/all.js';
+        document.getElementById('fb-root').appendChild(e);
+      }());
+    </script>
+
     </div><!-- /page -->
   </body>
 </html>

@@ -6,9 +6,17 @@
   <%= @movie.name %>
 <% end %>
 
+<% content_for :header do %>
+  <h1><%= @movie.name %></h1>
+  <a href="../../" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-right jqm-home">Home</a>
+<% end %>
+
 <%= image_tag(@movie.horizontal.mobile.url)  %>
 
+<fb:like href="<%= movie_url(@movie) %>" layout="box_count" show_faces="false" width="90" action="recommend" font="lucida grande"></fb:like>
+
 <ul class="showtimes" data-role="listview" data-inset="true" data-theme="c" data-url='<%= closest_movie_path(@movie) %>'>
+
 <li data-role="list-divider">Show times</li>
 </ul>
 

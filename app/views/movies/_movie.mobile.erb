@@ -1,6 +1,8 @@
 <li>
-  <%= image_tag movie.vertical.mobile.url,:height => 80,:width => 80 %>
-  <h2 style="margin-top:0;"><%= link_to movie.name, movie %> </h2>
-  <p><strong><%= movie.last_computed_score %>%</strong></p>
-  <p><%= movie.cast %></p>
+  <%= link_to movie do %>
+    <%= image_tag movie.vertical.mobile.url,:height => 80,:width => 80 %>
+    <h3> <%= movie.name.camelcase %> </h3>
+    <h3> <%= formatted_score(movie) %> </h3>
+    <p> <%= truncate(movie.cast) %> </p>
+  <% end %>
 </li>
