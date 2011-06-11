@@ -67,6 +67,8 @@ module ActionController
       # the user has opted to use either the 'Standard' view or 'Mobile' view.
 
       def set_mobile_format
+        Rails.logger.info "is mobile: #{is_mobile_device?}"
+        Rails.logger.info "is xhr: #{!request.xhr?}"
         if is_mobile_device? && !request.xhr?
           request.format = session[:mobile_view] == false ? :html : :mobile
           session[:mobile_view] = true if session[:mobile_view].nil?
@@ -84,7 +86,6 @@ module ActionController
       # the device making the request is matched to a device in our regex.
 
       def is_mobile_device?
-        Rails.logger.info request.user_agent
         request.user_agent.to_s.downcase =~ Regexp.new(ActionController::MobileFu::MOBILE_USER_AGENTS)
       end
 
